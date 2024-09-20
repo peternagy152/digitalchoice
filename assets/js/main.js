@@ -20,16 +20,4 @@ document.addEventListener("DOMContentLoaded", function () {
     menuOverlay.style.display = "none";
     document.body.classList.remove("menu-open");
   }
-
-  // Close menu when clicking outside of it
-  window.addEventListener("click", function (event) {
-    if (
-      event.target !== mobileMenu &&
-      !mobileMenu.contains(event.target) &&
-      event.target !== menuToggle &&
-      event.target !== closeMenu
-    ) {
-      closeMenuHandler();
-    }
-  });
 });
