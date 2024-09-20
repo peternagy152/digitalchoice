@@ -23,7 +23,7 @@
 <?php $header_content = get_field("header_group", "options"); ?>
 
 <nav class="relative bg-transparent  shadow container mx-auto ">
-<div class = " my-3 px-4 flex items-center rounded-[40px] justify-between py-2 start-0 end-0 mx-4">
+<div class = " absolute top-0 start-0 end-0  blur border   px-4 flex items-center rounded-[40px] justify-between py-2  mx-4">
 
     <a class="text-2xl font-bold text-violet-600  w-[90px] h-[90px] block" href="/">        
 		
@@ -48,11 +48,13 @@
     </ul> -->
 
     <div class="hidden lg:flex">
-			<div class=" mx-4 flex justify-center text-center items-center font-normal text-[14px] text-[#344767]">		<?php foreach ($header_content["main_menu"] as $one_item) { ?>
-            <a href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?></a>
+			<div class=" mx-4 flex justify-center text-center items-center font-normal text-[14px] text-[#344767]">		
+				<?php foreach ($header_content["main_menu"] as $one_item) { ?>
+            <a href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?>
+		</a>
         		<?php } ?></div>
 
-        <a href="https://tailwindflex.com/playground">
+        	<a href="https://tailwindflex.com/playground">
             <button class="py-1.5 px-3 m-1 text-center bg-violet-700 border rounded-md text-white hover:bg-violet-500 hover:text-gray-100  hidden lg:block">
                 Tailwind Playground
             </button>
