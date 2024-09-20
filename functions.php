@@ -28,6 +28,10 @@ function digitalchoice_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'digitalchoice_enqueue_scripts');
 
 //! create FAQs Custom Post 
+function enqueue_tailwind_styles() {
+    wp_enqueue_style('tailwindcss', get_template_directory_uri() . '/assets/css/output.css', array(), '1.0', 'all');
+}
+add_action('wp_enqueue_scripts', 'enqueue_tailwind_styles');
 
 function Faqs() {
 

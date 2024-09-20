@@ -9,7 +9,7 @@ function mobileMenu() {
 }
 
 // when we click on hamburger icon its close
-
+console.log("kareem kate");
 const navLink = document.querySelectorAll(".nav-link");
 
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
