@@ -12,63 +12,30 @@
 <?php $header_content = get_field("header_group", "options"); ?>
 
 <!-- Navigation Bar -->
-<nav class="container">
-  <div class="navbar">
-    <!-- Logo and Website Name -->
-    <div class="logo-container !my-4">
-      <img src="<?php echo $header_content['logo']; ?>" alt="" class="logo">
-      <span class="website-name">Digital Choice</span>
-    </div>
-
-    <!-- Navigation Links -->
-    <div class="nav-links">
-      <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-        <a href="<?php echo $one_item['menu_item']['url']; ?>" class="nav-link">
-          <?php echo $one_item["menu_item"]['title']; ?>
-        </a>
-      <?php } ?>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-button" id="menu-toggle">
-      <span class="menu-icon"></span>
-    </button>
-
-    <!-- Button -->
-    <div class="button-container">
-      <button class="calendly-button">Calendly</button>
-    </div>
-  </div>
-</nav>
-
-<!-- Slide-out Menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <button class="close-button" id="close-menu">×</button>
-  <div class="menu-items">
-    <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-      <a href="<?php echo $one_item['menu_item']['url']; ?>" class="nav-link">
-        <?php echo $one_item["menu_item"]['title']; ?>
-      </a>
-    <?php } ?>
-  </div>
-</div>
-
-<!-- Overlay for Menu Shadow -->
-<div id="menu-overlay"></div>
-<div id="page" class="site">
-    <header id="masthead" class="site-header">
-        <!-- LOGO -->
-        <img src="<?php echo $header_content['logo']; ?>" alt="">
-
-        <!-- Menu Items -->
-        <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-            <a href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?></a>
-        <?php } ?>
-
-        <!-- Header Button -->
-        <a href="<?php echo $header_content['header_button']['url']; ?>"><?php echo $header_content['header_button']['title']; ?></a>
+<header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">CuriousAman</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
     </header>
-</div>
 <?php wp_footer(); ?>
 </body>
 </html>

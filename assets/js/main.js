@@ -1,21 +1,20 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const closeMenu = document.getElementById("close-menu");
-  const menuOverlay = document.getElementById("menu-overlay");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-  menuToggle.addEventListener("click", function () {
-    mobileMenu.style.right = "0";
-    menuOverlay.style.display = "block";
-    document.body.classList.add("menu-open");
-  });
+hamburger.addEventListener("click", mobileMenu);
 
-  closeMenu.addEventListener("click", closeMenuHandler);
-  menuOverlay.addEventListener("click", closeMenuHandler);
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
 
-  function closeMenuHandler() {
-    mobileMenu.style.right = "-100%";
-    menuOverlay.style.display = "none";
-    document.body.classList.remove("menu-open");
-  }
-});
+// when we click on hamburger icon its close
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}

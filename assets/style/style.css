@@ -1,153 +1,131 @@
-/* Basic Styles */
-.container {
-  margin: 16px auto;
-  max-width: 1200px;
-  padding: 0 16px;
+/* css to reset all the designs */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* css to reset all the designs */
+
+/* add styles on elements */
+
+.header {
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #222;
 }
 
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 8px 16px;
-  border: 1px solid #ffffff;
-  border-radius: 40px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-}
-
-.logo-container {
-  display: flex;
   align-items: center;
-  gap: 8px;
+  padding: 1.5rem 1.5rem;
 }
 
-.logo {
-  height: 32px;
-  width: 32px;
-}
-
-.website-name {
-  color: #000000;
-  font-weight: 600;
-  font-size: 1.125rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-}
-
-.button-container {
-  display: flex;
-}
-
-.calendly-button {
-  padding: 8px 16px;
-  background-color: #3b82f6;
-  color: #ffffff;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-.calendly-button:hover {
-  background-color: #2563eb;
-}
-
-/* Mobile Menu Button */
-.mobile-menu-button {
+.hamburger {
   display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
-.menu-icon {
-  width: 25px;
-  height: 2px;
-  background: #000;
+.bar {
   display: block;
-  position: relative;
-  transition: 0.4s;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-  content: "";
-  position: absolute;
   width: 25px;
-  height: 2px;
-  background: #000;
-  transition: 0.4s;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  /* background-color: #101010; */
+  background-color: #fff;
 }
 
-.menu-icon::before {
-  transform: translateY(-8px);
-}
-
-.menu-icon::after {
-  transform: translateY(8px);
-}
-
-/* Slide-out Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: calc(100% - 20px);
-  max-width: 300px;
-  height: 100vh;
-  background: #ffffff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
-  transition: right 0.3s ease;
-  padding: 16px;
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  display: block;
-  margin-left: auto;
-}
-
-.menu-items {
+.nav-menu {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+.nav-item {
+  margin-left: 5rem;
+}
+
+.nav-link {
+  /* font-size: 1.6rem; */
+  font-size: 2rem;
+  font-weight: 400;
+  /* color: #475569; */
+  color: #fff;
+  /* change */
+}
+
+.nav-link:hover {
+  color: #482ff7;
+}
+
+.nav-logo {
+  /* font-size: 2.1rem; */
+  font-size: 3rem;
+  font-weight: 500;
+  /* color: #482ff7; */
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    /* background-color: #fff; */
+    background-color: #222;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
-  .mobile-menu-button {
+  .nav-link {
+    color: #fff;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
     display: block;
+    cursor: pointer;
   }
 
-  .button-container {
-    display: none;
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
 
-/* Overlay for Shadow Effect */
-#menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 999;
-}
+/* add styles on elements */
