@@ -10,7 +10,7 @@
  */
 ?>
 <!doctype html>
-<html >
+<html>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,9 +19,10 @@
     <?php wp_head(); ?>
 </head>
 
-<body >
+<body>
 <?php $header_content = get_field("header_group", "options"); ?>
 
+<!-- Navigation Bar -->
 <nav class="container">
   <div class="navbar">
     <!-- Logo and Website Name -->
@@ -63,8 +64,10 @@
   </div>
 </div>
 
+<!-- Overlay for Menu Shadow -->
+<div id="menu-overlay"></div>
 
-<h1 class="text-[20px] bg-black text-white font-bold">Kareem</h1>
+<!-- Main Page Content -->
 <div id="page" class="site">
     <header id="masthead" class="site-header">
         <!-- LOGO -->
@@ -80,6 +83,6 @@
     </header>
 </div>
 
-<?php  ?>
+<?php wp_footer(); ?>
 </body>
 </html>
