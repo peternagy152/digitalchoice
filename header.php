@@ -16,10 +16,14 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link href="<?php echo get_template_directory_uri() . '/assets/css/output.css' ?>" rel="stylesheet">
+
 	<?php wp_head(); ?>
 </head>
 
 <body>
+
+<h1 class="text-[20px] bg-black text-white  fonr-bold"> kareem </h1>
 	<?php $header_content = get_field("header_group" , "options") ;  ?>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
