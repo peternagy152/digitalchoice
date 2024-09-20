@@ -32,4 +32,8 @@
   <?php } ?>
 
 
+<!-- Header Button -->
+ <a href="<?php echo $header_content['header_button']['url'] ?>"> <?= $header_content['header_button']['title']; ?></a>
+
+
 	</header>
