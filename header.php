@@ -21,47 +21,53 @@
 
 <body >
 <?php $header_content = get_field("header_group", "options"); ?>
-<div class="sticky top-0 z-50 bg-white shadow-md backdrop-blur-sm">
-    <div class="flex items-center justify-between px-4 py-2 mx-4 my-3 rounded-lg">
-        <nav class="flex items-center w-full">
-            <!-- Logo Section -->
-            <a href="https://demos.creative-tim.com/soft-ui-design-system/presentation.html" class="text-lg font-bold text-violet-600 flex items-center">
-                <img src="<?php echo $header_content['logo']; ?>" alt="Logo" class="w-12 h-12 mr-2" />
-                Soft UI Design System
-            </a>
 
-            <!-- Burger Button for Mobile -->
-            <button class="lg:hidden ml-auto p-2 text-violet-600" id="navbar_burger">
-                <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-                </svg>
-            </button>
+<nav class="relative  container mx-auto ">
+<div class = " relative top-0 start-0 end-0 shadow  blur border   px-4 flex items-center rounded-[40px] justify-between py-2  ">
 
-            <!-- Main Menu and Additional Links -->
-            <div class="hidden lg:flex flex-1 justify-between items-center">
-                <div class="mx-4 flex justify-center text-center items-center font-normal text-[14px] text-[#344767]">
-                    <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-                        <a href="<?php echo $one_item['menu_item']['url']; ?>" class="mx-2 text-gray-800 hover:text-violet-600">
-                            <?php echo $one_item["menu_item"]['title']; ?>
-                        </a>
-                    <?php } ?>
-                </div>
+    <a class="text-2xl font-bold text-violet-600  w-[90px] h-[90px] block" href="/">        
+		
+	<img src="<?php echo $header_content['logo']; ?>" alt="" class="w-[90px] h-[90px]">
+	</a>
 
-                <div class="flex items-center space-x-4">
-                    <a href="https://tailwindflex.com/playground">
-                        <button class="py-1.5 px-3 m-1 text-center bg-violet-700 border rounded-md text-white hover:bg-violet-500 hover:text-gray-100">
-                            Tailwind Playground
-                        </button>
-                    </a>
-
-                    <a href="https://tailwindflex.com/login" class="py-1.5 px-3 m-1 text-center bg-gray-100 border border-gray-300 rounded-md text-black hover:bg-gray-200">
-                        Sign In
-                    </a>
-                </div>
-            </div>
-        </nav>
+    <div class="lg:hidden">
+        <button class="navbar-burger flex items-center text-violet-600  p-1" id="navbar_burger">
+            <svg class="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Hamberger menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+        </button>
     </div>
-</div>
+
+    <!-- <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+        <li>
+            <div class="relative mx-auto text-gray-600">
+                
+            </div>
+        </li>
+    </ul> -->
+
+    <div class="hidden lg:flex">
+			<div class=" mx-4 flex justify-center text-center items-center font-normal text-[14px] text-[#344767]">		
+				<?php foreach ($header_content["main_menu"] as $one_item) { ?>
+            <a href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?>
+		</a>
+        		<?php } ?></div>
+
+        	<a href="https://tailwindflex.com/playground">
+            <button class="py-1.5 px-3 m-1 text-center bg-violet-700 border rounded-md text-white hover:bg-violet-500 hover:text-gray-100  hidden lg:block">
+                Tailwind Playground
+            </button>
+        </a>
+
+        <div>
+            <a class="py-1.5 px-3 m-1 text-center bg-gray-100 border border-gray-300 rounded-md text-black hover:bg-gray-100  hidden lg:inline-block" href="https://tailwindflex.com/login">
+                Sign In
+            </a>
+        </div>
+    </div>    </div>
+
+</nav>
 
 <h1 class="text-[20px] bg-black text-white font-bold">Kareem</h1>
 <div id="page" class="site">
