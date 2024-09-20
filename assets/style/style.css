@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Basic Styles */
 .container {
   margin: 16px auto;
-  max-width: 1200px; /* Adjust as needed */
-  padding: 0 16px; /* Responsive padding */
+  max-width: 1200px;
+  padding: 0 16px;
 }
 
 .navbar {
@@ -13,57 +14,42 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 16px;
-  border: 1px solid #d1d5db; /* Gray border */
+  border: 1px solid #d1d5db;
   border-radius: 40px;
   background-color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: wrap;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex: 1; /* Allows logo to adjust space on smaller screens */
 }
 
 .logo {
   height: 32px;
-  width: 32px; /* Adjust the size of the logo */
+  width: 32px;
 }
 
 .website-name {
   color: #000000;
   font-weight: 600;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
 }
 
 .nav-links {
   display: flex;
   gap: 24px;
-  flex: 1; /* Flex property helps adjust spacing responsively */
-  justify-content: center; /* Centers the navigation links */
-}
-
-.nav-link {
-  color: #000000;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-link:hover {
-  color: #4b5563; /* Dark gray */
 }
 
 .button-container {
   display: flex;
-  flex: 1; /* Adjusts button placement on smaller screens */
-  justify-content: flex-end; /* Aligns the button to the right */
 }
 
 .calendly-button {
   padding: 8px 16px;
-  background-color: #3b82f6; /* Blue */
+  background-color: #3b82f6;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -73,37 +59,84 @@
 }
 
 .calendly-button:hover {
-  background-color: #2563eb; /* Darker blue */
+  background-color: #2563eb;
+}
+
+/* Mobile Menu Styles */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 25px;
+  height: 2px;
+  background: #000;
+  display: block;
+  position: relative;
+  transition: 0.4s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: #000;
+  transition: 0.4s;
+}
+
+.menu-icon::before {
+  transform: translateY(-8px);
+}
+
+.menu-icon::after {
+  transform: translateY(8px);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 8px; /* Adjust padding for smaller screens */
+  .nav-links {
+    display: none;
   }
 
-  .nav-links {
-    margin-top: 8px; /* Adds spacing between sections */
-    flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+  .mobile-menu-button {
+    display: block;
   }
 
   .button-container {
-    margin-top: 8px; /* Adds spacing for the button */
-    justify-content: center; /* Center the button on smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .website-name {
-    font-size: 1rem; /* Smaller font size on small screens */
-  }
-
-  .nav-links {
-    gap: 16px; /* Reduce gap between links */
-  }
-
-  .calendly-button {
-    padding: 6px 12px; /* Adjust button size */
+    display: none;
   }
 }

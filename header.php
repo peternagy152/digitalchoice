@@ -26,16 +26,23 @@
   <div class="navbar">
     <!-- Logo and Website Name -->
     <div class="logo-container">
-      <img src="path/to/logo.png" alt="Logo" class="logo" />
+      <img src="<?php echo $header_content['logo']; ?>" alt="" class="logo">
       <span class="website-name">Digital Choice</span>
     </div>
 
     <!-- Navigation Links -->
     <div class="nav-links">
-      <a href="#" class="nav-link">Home</a>
-      <a href="#" class="nav-link">About Us</a>
-      <a href="#" class="nav-link">Services</a>
+      <?php foreach ($header_content["main_menu"] as $one_item) { ?>
+        <a href="<?php echo $one_item['menu_item']['url']; ?>" class="nav-link">
+          <?php echo $one_item["menu_item"]['title']; ?>
+        </a>
+      <?php } ?>
     </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-button" id="menu-toggle">
+      <span class="menu-icon"></span>
+    </button>
 
     <!-- Button -->
     <div class="button-container">
@@ -44,6 +51,17 @@
   </div>
 </nav>
 
+<!-- Slide-out Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="close-button" id="close-menu">×</button>
+  <div class="menu-items">
+    <?php foreach ($header_content["main_menu"] as $one_item) { ?>
+      <a href="<?php echo $one_item['menu_item']['url']; ?>" class="nav-link">
+        <?php echo $one_item["menu_item"]['title']; ?>
+      </a>
+    <?php } ?>
+  </div>
+</div>
 
 
 <h1 class="text-[20px] bg-black text-white font-bold">Kareem</h1>
@@ -62,6 +80,6 @@
     </header>
 </div>
 
-<?php wp_footer(); ?>
+<?php  ?>
 </body>
 </html>
