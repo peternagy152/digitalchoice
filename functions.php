@@ -21,6 +21,11 @@ if( function_exists('acf_add_options_page') ) {
 		'parent_slug'	=> 'theme-general-settings',
 	));
 }
+// functions.php
+function digitalchoice_enqueue_scripts() {
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), null, true);
+}
+add_action('wp_enqueue_scripts', 'digitalchoice_enqueue_scripts');
 
 //! create FAQs Custom Post 
 
