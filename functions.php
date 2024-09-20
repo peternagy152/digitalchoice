@@ -20,6 +20,44 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Header & Footer',
 		'parent_slug'	=> 'theme-general-settings',
 	));
-	
-	
 }
+
+//! create FAQs Custom Post 
+
+function Faqs() {
+
+	$supports = array(
+		'title', // post title
+		'editor' , 
+		// 'excerpt', // post excerpt
+
+	);
+
+	$labels = array(
+		'name' => _x('FAQs', 'plural'),
+		'singular_name' => _x('FAQ', 'singular'),
+		'menu_name' => _x('FAQs', 'admin menu'),
+		'name_admin_bar' => _x('FAQs', 'admin bar'),
+		'add_new' => _x('Add New', 'add new'),
+		'add_new_item' => __('Add New FAQ'),
+		'new_item' => __('New FAQ'),
+		'edit_item' => __('Edit FAQ'),
+		'view_item' => __('View FAQs'),
+		'all_items' => __('All FAQs'),
+		'search_items' => __('Search FAQ'),
+		'not_found' => __('No FAQs found.'),
+	);
+
+	$args = array(
+		'supports' => $supports,
+		'labels' => $labels,
+		'public' => true,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'branch'),
+		'has_archive' => true,
+		'hierarchical' => false,
+	);
+	register_post_type('faq', $args);
+}
+
+add_action('init', 'Faqs');
