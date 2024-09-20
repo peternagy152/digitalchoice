@@ -28,7 +28,7 @@
   <img src="<?php echo $header_content['logo']  ; ?>" alt="">
 <!--  Menu Items  -->
 
-<?php foreach($header_content["main_menu"] as $one_item ) ?>
+<?php foreach($header_content["main_menu"] as $one_item ){ ?>
 <a href="<?php echo $one_item['link'] ?>"><?php echo $one_item['text'] ?></a>
   <?php } ?>
 
