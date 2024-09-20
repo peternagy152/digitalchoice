@@ -29,7 +29,7 @@
 <!--  Menu Items  -->
 
 <?php foreach($header_content["main_menu"] as $one_item ){ ?>
-<a href="<?php echo $one_item[0]['url'] ;  ?>"> <?php echo $one_item[0]['title'] ; ?> </a>
+<a href="<?php echo $one_item['menu_item']['url'] ;  ?>"> <?php echo $one_item["menu_item"]['title'] ; ?> </a>
   <?php } ?>
 
 
