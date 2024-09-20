@@ -21,10 +21,16 @@
 
 <body>
 	<?php $header_content = get_field("header_group" , "options") ;  ?>
+	<?php var_dump($header_content) ;?>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
 <!--  LOGO -->
   <img src="<?php echo $header_content['logo']  ; ?>" alt="">
-  
+<!--  Menu Items  -->
+
+<?php foreach($header_content["main_menu"] as $one_item ) ?>
+<a href="<?php echo $one_item['link'] ?>"><?php echo $one_item['text'] ?></a>
+  <?php } ?>
+
 
 	</header><!-- #masthead -->
