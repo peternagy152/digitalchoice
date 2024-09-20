@@ -619,6 +619,10 @@ video {
   height: 1.5rem;
 }
 
+.h-\[70px\] {
+  height: 70px;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -629,6 +633,10 @@ video {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-\[70px\] {
+  width: 70px;
 }
 
 .-translate-x-1\/2 {

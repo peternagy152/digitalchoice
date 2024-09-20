@@ -10,7 +10,7 @@
  */
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html >
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,12 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body >
+<?php $header_content = get_field("header_group", "options"); ?>
 
 <nav class="relative px-4 py-2 flex justify-between items-center bg-white dark:bg-gray-800 border-b-2 dark:border-gray-600">
-    <a class="text-2xl font-bold text-violet-600 dark:text-white" href="#">TailwindFlex</a>
+    <a class="text-2xl font-bold text-violet-600 dark:text-white" href="#">        <img src="<?php echo $header_content['logo']; ?>" alt="" class="w-[70px] h-[70px]">
+	</a>
 
     <div class="lg:hidden">
         <button class="navbar-burger flex items-center text-violet-600 dark:text-gray-100 p-1" id="navbar_burger">
@@ -71,7 +73,6 @@
 </nav>
 
 <h1 class="text-[20px] bg-black text-white font-bold">Kareem</h1>
-<?php $header_content = get_field("header_group", "options"); ?>
 <div id="page" class="site">
     <header id="masthead" class="site-header">
         <!-- LOGO -->
