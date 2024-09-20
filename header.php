@@ -25,7 +25,7 @@
 <nav class="container">
   <div class="navbar">
     <!-- Logo and Website Name -->
-    <div class="logo-container">
+    <div class="logo-container !my-4">
       <img src="<?php echo $header_content['logo']; ?>" alt="" class="logo">
       <span class="website-name">Digital Choice</span>
     </div>
@@ -41,7 +41,7 @@
 
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-button" id="menu-toggle">
-      <span class="menu-icon"></span>
+      <span class="menu-icon h-11"></span>
     </button>
 
     <!-- Button -->
