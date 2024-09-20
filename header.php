@@ -22,51 +22,30 @@
 <body >
 <?php $header_content = get_field("header_group", "options"); ?>
 
-<nav class="relative  container mx-auto ">
-<div class = " relative top-0 start-0 end-0 shadow  blur border   px-4 flex items-center rounded-[40px] justify-between py-2 my-4 ">
-
-    <a class="text-2xl font-bold text-violet-600   flex " href="/">        
-		
-	<img src="<?php echo $header_content['logo']; ?>" alt="" class="w-[90px] h-[90px] ml-2">
-<span class="mr-2 text-white font-bold text-[0.875rem]"> Digital </span>
-
-<span class="text-primary font-bold text-[0.875rem]"> Choice</span>
-	</a>
-
-    <div class="lg:hidden">
-        <button class="navbar-burger flex items-center text-violet-600  p-1" id="navbar_burger">
-            <svg class="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Hamberger menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-        </button>
+<nav class="container mx-auto">
+  <div class="flex items-center justify-between px-4 my-4 border border-gray-300 rounded-[40px] bg-white shadow-lg">
+    <!-- Logo and Website Name -->
+    <div class="flex items-center space-x-2">
+      <img src="path/to/logo.png" alt="Logo" class="h-8 w-8"> <!-- Adjust the path and size of the logo as needed -->
+      <span class="text-black font-semibold text-lg">Digital Choice</span>
     </div>
 
-    <!-- <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
-        <li>
-            <div class="relative mx-auto text-gray-600">
-                
-            </div>
-        </li>
-    </ul> -->
+    <!-- Navigation Links -->
+    <div class="flex space-x-6">
+      <a href="#" class="text-black hover:text-gray-700">Home</a>
+      <a href="#" class="text-black hover:text-gray-700">About Us</a>
+      <a href="#" class="text-black hover:text-gray-700">Services</a>
+    </div>
 
-    <div class="hidden lg:flex">
-			<div class=" mx-4 flex justify-center text-center items-center font-normal text-[14px] text-[#344767]">		
-				<?php foreach ($header_content["main_menu"] as $one_item) { ?>
-            <a href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?>
-		</a>
-        		<?php } ?></div>
-
-        	
-
-        <div class="flex justify-end">
-            <a class="py-1.5 px-3 m-1 text-center  bg-gray-100 border border-gray-300 rounded-md text-black hover:bg-gray-100  hidden lg:inline-block" href="https://tailwindflex.com/login">
-               calendy
-            </a>
-        </div>
-    </div>    </div>
-
+    <!-- Button -->
+    <div>
+      <button class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">
+        Calendly
+      </button>
+    </div>
+  </div>
 </nav>
+
 
 <h1 class="text-[20px] bg-black text-white font-bold">Kareem</h1>
 <div id="page" class="site">
