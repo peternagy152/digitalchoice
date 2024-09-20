@@ -23,7 +23,7 @@
 <?php $header_content = get_field("header_group", "options"); ?>
 
 <nav class="container mx-auto !my-[16px] ">
-  <div class="flex items-center justify-between px-4 border border-gray-300 rounded-[40px] bg-white shadow-lg">
+  <div class="flex items-center justify-between px-4 border border-gray-300  rounded-[40px] bg-white shadow-lg">
     <!-- Logo and Website Name -->
     <div class="flex items-center space-x-2">
       <img src="path/to/logo.png" alt="Logo" class="h-8 w-8"> <!-- Adjust the path and size of the logo as needed -->
