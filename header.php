@@ -21,7 +21,6 @@
 
 <body>
 	<?php $header_content = get_field("header_group" , "options") ;  ?>
-	<?php var_dump($header_content) ;?>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
 <!--  LOGO -->
