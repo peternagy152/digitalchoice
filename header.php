@@ -23,11 +23,14 @@
 <?php $header_content = get_field("header_group", "options"); ?>
 
 <nav class="relative  container mx-auto ">
-<div class = " relative top-0 start-0 end-0 shadow  blur border   px-4 flex items-center rounded-[40px] justify-between py-2  ">
+<div class = " relative top-0 start-0 end-0 shadow  blur border   px-4 flex items-center rounded-[40px] justify-between py-2 my-4 ">
 
-    <a class="text-2xl font-bold text-violet-600  w-[90px] h-[90px] block" href="/">        
+    <a class="text-2xl font-bold text-violet-600   flex " href="/">        
 		
-	<img src="<?php echo $header_content['logo']; ?>" alt="" class="w-[90px] h-[90px]">
+	<img src="<?php echo $header_content['logo']; ?>" alt="" class="w-[90px] h-[90px] ml-2">
+<span class="mr-2 text-white font-bold text-[0.875rem]"> Digital </span>
+
+<span class="text-primary font-bold text-[0.875rem]"> Choice</span>
 	</a>
 
     <div class="lg:hidden">
@@ -54,15 +57,11 @@
 		</a>
         		<?php } ?></div>
 
-        	<a href="https://tailwindflex.com/playground">
-            <button class="py-1.5 px-3 m-1 text-center bg-violet-700 border rounded-md text-white hover:bg-violet-500 hover:text-gray-100  hidden lg:block">
-                Tailwind Playground
-            </button>
-        </a>
+        	
 
-        <div>
-            <a class="py-1.5 px-3 m-1 text-center bg-gray-100 border border-gray-300 rounded-md text-black hover:bg-gray-100  hidden lg:inline-block" href="https://tailwindflex.com/login">
-                Sign In
+        <div class="flex justify-end">
+            <a class="py-1.5 px-3 m-1 text-center  bg-gray-100 border border-gray-300 rounded-md text-black hover:bg-gray-100  hidden lg:inline-block" href="https://tailwindflex.com/login">
+               calendy
             </a>
         </div>
     </div>    </div>
