@@ -1,3 +1,109 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  margin: 16px auto;
+  max-width: 1200px; /* Adjust as needed */
+  padding: 0 16px; /* Responsive padding */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border: 1px solid #d1d5db; /* Gray border */
+  border-radius: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1; /* Allows logo to adjust space on smaller screens */
+}
+
+.logo {
+  height: 32px;
+  width: 32px; /* Adjust the size of the logo */
+}
+
+.website-name {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.125rem; /* 18px */
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  flex: 1; /* Flex property helps adjust spacing responsively */
+  justify-content: center; /* Centers the navigation links */
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #4b5563; /* Dark gray */
+}
+
+.button-container {
+  display: flex;
+  flex: 1; /* Adjusts button placement on smaller screens */
+  justify-content: flex-end; /* Aligns the button to the right */
+}
+
+.calendly-button {
+  padding: 8px 16px;
+  background-color: #3b82f6; /* Blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.calendly-button:hover {
+  background-color: #2563eb; /* Darker blue */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .nav-links {
+    margin-top: 8px; /* Adds spacing between sections */
+    flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+  }
+
+  .button-container {
+    margin-top: 8px; /* Adds spacing for the button */
+    justify-content: center; /* Center the button on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .website-name {
+    font-size: 1rem; /* Smaller font size on small screens */
+  }
+
+  .nav-links {
+    gap: 16px; /* Reduce gap between links */
+  }
+
+  .calendly-button {
+    padding: 6px 12px; /* Adjust button size */
+  }
+}

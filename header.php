@@ -15,36 +15,35 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link href="<?php echo get_template_directory_uri() . '/assets/css/output.css'; ?>" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() . '/assets/style/style.css'; ?>" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
 <body >
 <?php $header_content = get_field("header_group", "options"); ?>
 
-<nav class="container mx-auto !my-[16px] ">
-  <div class="flex items-center justify-between px-4 border border-gray-300  rounded-[40px] bg-white shadow-lg">
+<nav class="container">
+  <div class="navbar">
     <!-- Logo and Website Name -->
-    <div class="flex items-center space-x-2">
-      <img src="path/to/logo.png" alt="Logo" class="h-8 w-8"> <!-- Adjust the path and size of the logo as needed -->
-      <span class="text-black font-semibold text-lg">Digital Choice</span>
+    <div class="logo-container">
+      <img src="path/to/logo.png" alt="Logo" class="logo" />
+      <span class="website-name">Digital Choice</span>
     </div>
 
     <!-- Navigation Links -->
-    <div class="flex space-x-6">
-      <a href="#" class="text-black hover:text-gray-700">Home</a>
-      <a href="#" class="text-black hover:text-gray-700">About Us</a>
-      <a href="#" class="text-black hover:text-gray-700">Services</a>
+    <div class="nav-links">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About Us</a>
+      <a href="#" class="nav-link">Services</a>
     </div>
 
     <!-- Button -->
-    <div>
-      <button class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">
-        Calendly
-      </button>
+    <div class="button-container">
+      <button class="calendly-button">Calendly</button>
     </div>
   </div>
 </nav>
+
 
 
 <h1 class="text-[20px] bg-black text-white font-bold">Kareem</h1>
