@@ -1,14 +1,3 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package digitalchoice
- */
-?>
 <!doctype html>
 <html>
 <head>
@@ -42,7 +31,7 @@
 
     <!-- Mobile Menu Button -->
     <button class="mobile-menu-button" id="menu-toggle">
-      <span class="menu-icon h-11"></span>
+      <span class="menu-icon"></span>
     </button>
 
     <!-- Button -->
@@ -66,8 +55,6 @@
 
 <!-- Overlay for Menu Shadow -->
 <div id="menu-overlay"></div>
-
-<!-- Main Page Content -->
 <div id="page" class="site">
     <header id="masthead" class="site-header">
         <!-- LOGO -->
@@ -82,7 +69,6 @@
         <a href="<?php echo $header_content['header_button']['url']; ?>"><?php echo $header_content['header_button']['title']; ?></a>
     </header>
 </div>
-
 <?php wp_footer(); ?>
 </body>
 </html>

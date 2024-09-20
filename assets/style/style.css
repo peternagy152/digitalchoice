@@ -98,15 +98,15 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: calc(100% - 20px); /* To leave a 20px gap on the left */
-  max-width: 300px; /* Limit the width to avoid taking up too much space */
+  width: calc(100% - 20px);
+  max-width: 300px;
   height: 100vh;
   background: #ffffff;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
   padding: 16px;
   z-index: 1000;
-  overflow-y: auto; /* Allows scrolling within the menu */
+  overflow-y: auto;
 }
 
 .close-button {
@@ -149,5 +149,5 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 999; /* Ensure the overlay is below the mobile menu */
+  z-index: 999;
 }

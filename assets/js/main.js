@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeMenu = document.getElementById("close-menu");
-  const menuOverlay = document.createElement("div");
-  menuOverlay.id = "menu-overlay";
-  document.body.appendChild(menuOverlay);
+  const menuOverlay = document.getElementById("menu-overlay");
 
   menuToggle.addEventListener("click", function () {
     mobileMenu.style.right = "0";
