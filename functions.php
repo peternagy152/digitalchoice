@@ -29,7 +29,6 @@ function Faqs() {
 	$supports = array(
 		'title', // post title
 		'editor' , 
-		// 'excerpt', // post excerpt
 
 	);
 
@@ -61,3 +60,9 @@ function Faqs() {
 }
 
 add_action('init', 'Faqs');
+
+function get_faqs() {
+    global $wpdb; 
+    $faqs = $wpdb->get_results("SELECT * FROM {$wpdb->posts} WHERE post_type = 'faq' AND post_status = 'publish'");
+    return $faqs; 
+}
