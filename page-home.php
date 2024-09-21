@@ -4,6 +4,7 @@
 
 <!--Hero Tailwind -->
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -162,8 +163,13 @@
     }
 
     @keyframes float-up {
-        to {
-            transform: translateY(-75vh) rotate(360deg);
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-75vh);
             opacity: 0;
         }
     }
@@ -199,7 +205,8 @@
         particle.style.height = `${size}px`;
 
         const x = Math.random() * window.innerWidth;
-        const y = window.innerHeight;
+        // Set the particle to start 75vh from the bottom
+        const y = window.innerHeight * 0.75;
         particle.style.left = `${x}px`;
         particle.style.top = `${y}px`;
 
@@ -228,7 +235,6 @@
         position: absolute;
         border-radius: 50%;
         pointer-events: none;
-
     }
 
     /* Particle animation */
@@ -246,8 +252,8 @@
     </style>
 </body>
 
-
 </html>
+
 <!-- Hero Banner  -->
 <h2> <?php echo $home_content['hero_title'] ;  ?></h2>
 <h2> <?php echo $home_content['hero_desc'] ;  ?></h2>
