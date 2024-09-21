@@ -440,15 +440,15 @@
             <button
                 class="glide__arrow glide__arrow--left  flex items-center gap-2 !bg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
                 data-glide-dir="<">
-                <svg class="w-full h-full rotate-90" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-4 h-4 rotate-180" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
                         fill="currentColor"></path>
                 </svg> </button>
             <button
-                class="glide__arrow glide__arrow--right  flex items-center gap-2 !visiblebg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
+                class="glide__arrow glide__arrow--right  flex items-center !bg-[#fa4223] gap-2 !visiblebg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
                 data-glide-dir=">">
-                <svg class="w-full h-full" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-4 h-4" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
                         fill="currentColor"></path>
