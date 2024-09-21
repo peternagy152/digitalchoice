@@ -486,7 +486,7 @@
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
                             <span class="text-white"> What is a SAAS platform?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -502,9 +502,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> How does billing work?</span>
+                            <span class="text-white"> How does billing work?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -522,9 +522,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> Can I get a refund for my subscription?</span>
+                            <span class="text-white"> Can I get a refund for my subscription?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -544,9 +544,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> How do I cancel my subscription?</span>
+                            <span class="text-white"> How do I cancel my subscription?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -564,9 +564,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> Can I try this platform for free?</span>
+                            <span class="text-white"> Can I try this platform for free?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -583,9 +583,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> How do I access documentation?</span>
+                            <span class="text-white"> How do I access documentation?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -603,9 +603,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span> How do I contact support?</span>
+                            <span class="text-white"> How do I contact support?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -622,9 +622,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> Do you offer any discounts or promotions?</span>
+                            <span class="text-white"> Do you offer any discounts or promotions?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
@@ -642,9 +642,9 @@
                 <div class="py-5">
                     <details class="group">
                         <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                            <span class="text-white">> How do we compare to other similar services?</span>
+                            <span class="text-white"> How do we compare to other similar services?</span>
                             <span class="transition group-open:rotate-180">
-                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
+                                <svg fill="white" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                                     viewBox="0 0 24 24" width="24">
                                     <path d="M6 9l6 6 6-6"></path>
