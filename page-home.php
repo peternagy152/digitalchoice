@@ -407,50 +407,23 @@
     </section>
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
-    <div class="carousel-container relative w-full max-w-4xl mx-auto overflow-hidden">
+    <div class="carousel-container relative w-full container mx-auto overflow-hidden">
         <!-- Carousel Items -->
         <div id="carousel" class="flex transition-transform duration-300">
+            <?php foreach($home_content['project_repeater'] as $one_project) { ?>
             <div class="item min-w-1/4 p-4">
                 <div class="bg-white rounded-lg shadow p-4">
-                    <img src="https://via.placeholder.com/150" alt="Item 1" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">Item 1</h2>
-                    <p class="text-sm text-gray-600">Description of Item 1</p>
+                    <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">
+                        <?= $one_project['project_title']; ?>
+                    </h2>
+                    <p class="text-sm text-gray-600">
+                        <?= $one_project['project_subtitle']; ?>
+                    </p>
                     <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
                 </div>
             </div>
-            <div class="item min-w-1/4 p-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <img src="https://via.placeholder.com/150" alt="Item 2" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">Item 2</h2>
-                    <p class="text-sm text-gray-600">Description of Item 2</p>
-                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                </div>
-            </div>
-            <div class="item min-w-1/4 p-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">Item 3</h2>
-                    <p class="text-sm text-gray-600">Description of Item 3</p>
-                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                </div>
-            </div>
-            <div class="item min-w-1/4 p-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <img src="https://via.placeholder.com/150" alt="Item 4" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">Item 4</h2>
-                    <p class="text-sm text-gray-600">Description of Item 4</p>
-                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                </div>
-            </div>
-            <!-- Duplicated items to create loop effect -->
-            <div class="item min-w-1/4 p-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <img src="https://via.placeholder.com/150" alt="Item 5" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">Item 5</h2>
-                    <p class="text-sm text-gray-600">Description of Item 5</p>
-                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                </div>
-            </div>
+            <?php } ?>
         </div>
 
         <!-- Navigation Buttons -->
@@ -463,6 +436,7 @@
             &#8594;
         </button>
     </div>
+
 
 
     <!-- ====== Products Carousel Section End -->
@@ -502,6 +476,8 @@
     setInterval(createParticle, 50);
     </script>
 
+
+
     <script>
     const carousel = document.getElementById('carousel');
     const nextButton = document.getElementById('next');
@@ -529,7 +505,7 @@
             carousel.style.transition = 'none';
             currentIndex = 0;
             carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        } else if (currentIndex === -1) {
+        } else if (currentIndex === lastClone) {
             carousel.style.transition = 'none';
             currentIndex = items.length - 1;
             carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
