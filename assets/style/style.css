@@ -7,4 +7,10 @@
   .bg-custom-gradient {
     background: linear-gradient(90deg, #ff510a75, #e7d0aba1);
   }
+  .h-3 {
+    height: 12px;
+  }
+  .w-3 {
+    width: 12px;
+  }
 }
