@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php $home_content = get_field("home_group") ;  ?>
 
-<body class="h-[90vh] flex items-center justify-center p-4 overflow-hidden">
+<div class="h-[90vh] flex items-center justify-center p-4 overflow-hidden">
     <div class="relative w-full h-[90vh] flex items-center justify-center bg-black bg-cover bg-center">
         <!-- Optional overlay for better text contrast -->
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -470,7 +470,7 @@
             </a>
         </div>
     </div>
-                </body>
+</div>
 
 <script>
 function createParticle() {
