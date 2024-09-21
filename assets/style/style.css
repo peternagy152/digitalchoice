@@ -11,14 +11,14 @@
     width: 12px !important;
     height: 12px !important;
   }
-}
-.icon1 {
-  width: 12px !important;
-  height: 12px !important;
-}
-.h-12 {
-  height: 3rem;
-}
-.w-12 {
-  width: 3rem;
+  .icon1 {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  .h-12 {
+    height: 3rem;
+  }
+  .w-12 {
+    width: 3rem;
+  }
 }

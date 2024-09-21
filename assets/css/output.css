@@ -618,7 +618,9 @@ video {
 .h-full {
   height: 100%;
 }
-
+.h-12 {
+  height: 3rem;
+}
 .w-12 {
   width: 3rem;
 }
@@ -770,15 +772,10 @@ video {
 }
 
 .bg-custom-gradient {
-  background: linear-gradient(90deg, #ff510a75, #e7d0aba1);
+  background: linear-gradient(90deg, #000000ed, #2a2928);
 }
 
 .icon {
-  width: 12px !important;
-  height: 12px !important;
-}
-
-.icon1 {
   width: 12px !important;
   height: 12px !important;
 }
