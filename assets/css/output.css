@@ -618,6 +618,14 @@ video {
   height: 100%;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-\[12px\] {
+  height: 12px;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -628,6 +636,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-\[12px\] {
+  width: 12px;
 }
 
 .transform {
