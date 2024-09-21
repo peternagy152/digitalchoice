@@ -8,79 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    
     <?php wp_head(); ?>
-    <style>
-    .nav-open {
-        overflow: hidden;
-    }
 
-    .nav-container {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 50;
-        transition: opacity 0.3s ease-in-out;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .nav-open .nav-container {
-        display: flex;
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .nav-content {
-        background-color: black;
-        padding: 20px;
-        width: 85%;
-        max-width: 85vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        transform: translateX(-100%);
-        opacity: 0;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-        overflow-y: auto;
-    }
-
-    .nav-open .nav-content {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    .overlay {
-        width: 20%;
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Light black, semi-transparent */
-        height: 100vh;
-    }
-
-    .close-button {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        text-white;
-        font-size: 18px;
-        cursor-pointer;
-        padding: 8px 16px;
-        border: 2px solid;
-        border-radius: 9999px;
-        background-color: #fa4223;
-        transition: background-color 0.3s ease-in-out;
-        color: while;
-    }
-
-    .close-button:hover {
-        background-color: #e0e0e0;
-        color: black;
-    }
-    </style>
 </head>
 
 <body class="font-saira">
@@ -187,8 +121,3 @@
         body.classList.toggle('nav-open');
     }
     </script>
-
-    <?php wp_footer(); ?>
-</body>
-
-</html>
