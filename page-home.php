@@ -244,11 +244,12 @@
         <div
             class="mx-auto container px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
             <!-- Text Content -->
-            <div class="flex flex-col items-center lg:items-start container text-left">
-                <h1 class="max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223] text-pretty">
+            <div class="flex flex-col items-center lg:items-start container text-center lg:text-left">
+                <h1
+                    class="max-w-4xl font-display text-4xl lg:text-5xl font-medium tracking-tight text-[#fa4223] text-pretty">
                     <?php echo $home_content['hero_title']; ?>
                 </h1>
-                <p class="mt-6 text-lg tracking-tight text-white max-w-4xl text-pretty">
+                <p class="mt-6 text-base lg:text-lg tracking-tight text-white max-w-4xl text-pretty">
                     <?php echo $home_content['hero_desc']; ?>
                 </p>
                 <a href="<?php echo $home_content['hero_button']['url']; ?>"
@@ -385,7 +386,7 @@
                 <!-- Button Section -->
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <a href="<?= $about['about_button']['url'] ?>"
-                        class="mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
+                        class="mt-6 flex text lg:items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
 
                         <span class="calendly-text"><?= $about['about_button']['title'] ?></span>
                         <span class="flex items-center justify-center w-4 h-4">
