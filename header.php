@@ -23,11 +23,13 @@
         .nav-toggle {
             display: block;
             /* Show toggle button on mobile */
-            position: fixed;
+            position: relative;
             top: 20px;
             left: 20px;
             z-index: 60;
             cursor: pointer;
+            height: 20px;
+            width: 20px;
         }
 
         .hidden {
@@ -71,18 +73,14 @@
     <?php $header_content = get_field("header_group", "options"); ?>
 
     <!-- Toggle Button for Mobile -->
-    <div class="nav-toggle" onclick="toggleNav()">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
+
 
     <nav class="container mx-auto">
         <div
             class="flex items-center justify-between my-3 px-2 lg:px-4 py-1 lg:py-2 border border-transparent rounded-[40px] bg-custom-gradient shadow-lg">
             <!-- Logo and Website Name -->
             <div class="flex items-center space-x-1">
-                <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-12 w-12">
+                <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-3 w-3 lg:h-12 lg:w-12">
                 <span class="text-white text-2xl font-bold">Digital</span>
                 <span class="text-primary text-2xl font-bold">Choice</span>
             </div>
@@ -112,6 +110,11 @@
                     </span>
                     <span class="ml-2 text-white" style="font-weight: bold; font-size: 14px;">Calendly</span>
                 </a>
+            </div>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
