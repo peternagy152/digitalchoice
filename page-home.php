@@ -280,7 +280,7 @@
     <div class=" relative  top-[-66px] bottom-0 w-full">
         <div class="flex justify-center mx-auto max-w-[980px]">
             <div
-                class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md relative lg:absolute z-[80] w-[90%] mx-4 lg:w-[50%]">
+                class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md relative lg:absolute z-[80] w-[90%] mx-4 lg:w-[50%] hidden  lg:block">
                 <div class="flex flex-wrap flex-col lg:flex-row lg:flex-nowrap">
                     <?php 
                 $totalItems = count($home_content['services_repeater']);
@@ -301,7 +301,7 @@
                         <!-- Add border except on the last item -->
                         <?php if ($index < $totalItems - 1): ?>
                         <hr
-                            class="relative lg:absolute right-0 botton-0 lg:top-0 w-full lg:h-full border-r border-gray-200 block">
+                            class="relative lg:absolute right-0 botton-0 lg:top-0 w-full lg:h-full lg:w-0 border-r border-gray-200 block">
                         <?php endif; ?>
                     </div>
                     <?php endforeach; ?>
@@ -332,12 +332,41 @@
         </div>
     </div>
 
+    <!-- mobile services  -->
+
+    <div
+        class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md relative lg:absolute z-[80] w-[90%] mx-4 lg:w-[50%] block  lg:hidden">
+        <div class="flex flex-wrap flex-col lg:flex-row lg:flex-nowrap">
+            <?php 
+                $totalItems = count($home_content['services_repeater']);
+                foreach($home_content['services_repeater'] as $index => $one_services): 
+            ?>
+            <div class="flex-1 p-4 relative min-w-0">
+                <div class="p-3 text-center inset-0 inset-x-auto">
+                    <!-- Display Service Icon -->
+                    <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
+                        class="mx-auto mb-3 max-w-[39px]">
+                    <!-- Display Service Title -->
+                    <h1 class="text-base font-semibold text-primary mb-2 text-nowrap">
+                        <?php echo $one_services['service_title']; ?>
+                    </h1>
+                    <!-- Display Service Description -->
+                    <p class="text-sm text-gray-600"><?php echo $one_services['service_desc']; ?></p>
+                </div>
+                <!-- Add border except on the last item -->
+                <?php if ($index < $totalItems - 1): ?>
+                <hr class="relative  right-0 botton-0 lg:top-0 w-full lg:h-full lg:w-0 border-r border-gray-200 block">
+                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
     <!-- about us  -->
 
     <section class="sm:mt-6 lg:mt-8 mt-12 container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div
-            class="my-10  px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-4 xl:mt-28 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col lg:flex-row justify-between">
+            class="my-10  px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-4 xl:mt-28 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col-reverse lg:flex-row justify-between">
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">

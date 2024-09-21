@@ -809,6 +809,10 @@ video {
   flex-direction: column;
 }
 
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
@@ -1271,6 +1275,10 @@ h2 {
     margin-top: 2rem;
   }
 
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -1293,6 +1301,10 @@ h2 {
 
   .lg\:w-\[81\%\] {
     width: 81%;
+  }
+
+  .lg\:w-0 {
+    width: 0px;
   }
 
   .lg\:flex-row {
