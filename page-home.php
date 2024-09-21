@@ -470,17 +470,28 @@
     <!-- ====== Products Carousel Section End -->
 
 
-    <div class=" w-full  bg-primary ">
+    <div class=" w-full  bg-black ">
 
-        <div class="container mx-auto py-8 flex flex-col gap-y-3 gap-x-3">
-            <h3 class="text-white text-4xl text-pretty font-bold "><?= $home_content['last_title'] ?></h3>
-            <h3 class="text-secondary text-2xl font-normal "><?= $home_content['last_subtitle'] ?></h3>
+        <div
+            class="container mx-auto py-8 flex flex-col gap-y-3 gap-x-3 px-4 w-full justify-center items-center text-center ">
+            <h3 class="text-secondary md:text-[40px] text-xl  font-normal text-pretty ">
+                <?= $home_content['last_subtitle'] ?></h3>
+
+            <h3 class="text-white md:text-[96px] text-[36px] text-pretty font-bold "><?= $home_content['last_title'] ?>
+            </h3>
             <a href="<?php echo $home_content['last_button']['url'] ?>">
                 <?php echo $home_content['last_button']['title'] ;  ?></a>
             <a href="<?php echo $home_content['last_button']['url'] ?>"
-                class="mt-6 flex text lg:items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
-
-                <span class="calendly-text"><?php echo $home_content['last_button']['title'] ;  ?></span>
+                class="mt-6 flex text lg:items-center gap-2 items-center bg-primary text-white px-4 py-2 rounded-[10px] border-2 border-primary hover:border-white hover:bg-white  hover:text-black transition-colors">
+                <span class="flex items-center justify-center w-4 h-4">
+                    <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.091 0.800049V3.85547H6.90959V0.800049H3.85417V3.85547H0.800781V23.2001H23.1987V3.85547H20.1454V0.800049H17.091ZM3.85417 8.94513H20.1443V6.90886H3.85417V8.94513ZM3.85417 20.1456H20.1443V11.9995H3.85417V20.1456Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </span>
+                <span
+                    class="md:text-xl text-base font-medium "><?php echo $home_content['last_button']['title'] ;  ?></span>
                 <span class="flex items-center justify-center w-4 h-4">
                     <svg class="w-full h-full" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
