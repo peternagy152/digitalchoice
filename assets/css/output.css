@@ -610,24 +610,24 @@ video {
   display: flex;
 }
 
-.h-3 {
-  height: 0.75rem;
-}
-
 .h-8 {
   height: 2rem;
+}
+
+.h-\[12px\] {
+  height: 12px;
 }
 
 .h-full {
   height: 100%;
 }
 
-.w-3 {
-  width: 0.75rem;
-}
-
 .w-8 {
   width: 2rem;
+}
+
+.w-\[12px\] {
+  width: 12px;
 }
 
 .w-full {
@@ -766,6 +766,11 @@ video {
 
 .bg-custom-gradient {
   background: linear-gradient(90deg, #ff510a75, #e7d0aba1);
+}
+
+.icon {
+  width: 12px !important;
+  height: 12px !important;
 }
 
 .hover\:bg-gray-500:hover {
