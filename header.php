@@ -64,11 +64,12 @@
         text-white;
         font-size: 18px;
         cursor-pointer;
-        padding: 8px;
-        border: 2px solid #fa4223;
+        padding: 8px 16px;
+        border: 2px solid;
         border-radius: 9999px;
         background-color: #fa4223;
         transition: background-color 0.3s ease-in-out;
+        color: while;
     }
 
     .close-button:hover {
