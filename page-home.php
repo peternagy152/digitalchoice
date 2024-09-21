@@ -280,7 +280,7 @@
     <div class=" relative  top-[-66px] bottom-0 w-full">
         <div class="flex justify-center mx-auto max-w-[980px]">
             <div
-                class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] w-[90%] mx-4 lg:w-[50%]">
+                class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md relative lg:absolute z-[80] w-[90%] mx-4 lg:w-[50%]">
                 <div class="flex flex-wrap flex-col lg:flex-row lg:flex-nowrap">
                     <?php 
                 $totalItems = count($home_content['services_repeater']);
@@ -300,7 +300,8 @@
                         </div>
                         <!-- Add border except on the last item -->
                         <?php if ($index < $totalItems - 1): ?>
-                        <hr class="absolute right-0 top-0 h-full border-r border-gray-200 hidden md:block">
+                        <hr
+                            class="relative lg:absolute right-0 botton-0 lg:top-0 w-full lg:h-full border-r border-gray-200 block">
                         <?php endif; ?>
                     </div>
                     <?php endforeach; ?>
@@ -340,11 +341,10 @@
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">
-                <h1 class="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
+                <h1 class="text-lg tracking-tight font-extrabold text-primary  md:text-3xl">
                     <?= $about['about_title'] ?>
                 </h1>
-                <p
-                    class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                <p class="mt-3 text-base text-gray-500 sm:mt-5  sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                     <?= $about['about_content'] ?>
                 </p>
                 <!-- Button Section -->
