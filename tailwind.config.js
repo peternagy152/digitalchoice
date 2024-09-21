@@ -14,5 +14,8 @@ module.exports = {
       },
     },
   },
+  fontFamily: {
+    "libre-baskerville": ['"Libre Baskerville"', "serif"], // Define the custom font
+  },
   plugins: [],
 };

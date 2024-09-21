@@ -412,7 +412,7 @@
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
     <div class="glide">
-        <h2 class="my-4 text-pretty font-extrabold text-4xl text-primary">
+        <h2 class="my-4 text-pretty font-extrabold text-4xl text-primary container mx-auto">
             <?php echo $home_content['projects_section_title'] ?></h2>
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
