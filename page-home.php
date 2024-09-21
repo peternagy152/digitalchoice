@@ -13,13 +13,6 @@
     <title>Extreme Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-
-
-
     <style>
     .bg-animated {
         background: linear-gradient(-45deg, #fa4223, #e0e0e0, #ffffff, #e0e0e0);
@@ -294,9 +287,8 @@
                     <div class="flex-1 p-4 relative min-w-0">
                         <div class="p-3 text-center inset-0 inset-x-auto">
                             <!-- Display Service Icon -->
-                            <img src="<?php echo $one_service<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
-s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
+                            <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
+                                class="mx-auto mb-3 max-w-[39px]">
                             <!-- Display Service Title -->
                             <h1 class="text-base font-semibold text-primary mb-2 text-nowrap">
                                 <?php echo $one_services['service_title']; ?>
@@ -313,9 +305,6 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
                     <?php endforeach; ?>
                 </div>
             </div>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
-
         </div>
 
         <!-- Services  -->
@@ -418,30 +407,38 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
     </section>
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
-
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-
-    <!-- Your Slick Container -->
-    <div class="slick-container w-full container mx-auto overflow-hidden">
-        <!-- Slick Slider Items -->
-        <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-        <div class="p-4">
-            <div class="bg-white rounded-lg shadow p-4">
-                <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
-                <h2 class="mt-2 text-lg font-bold">
-                    <?= $one_project['project_title']; ?>
-                </h2>
-                <p class="text-sm text-gray-600">
-                    <?= $one_project['project_subtitle']; ?>
-                </p>
-                <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+    <div class="carousel-container relative w-full container mx-auto overflow-hidden">
+        <!-- Carousel Items -->
+        <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
+            <?php foreach($home_content['project_repeater'] as $one_project) { ?>
+            <div class="item min-w-[25%] p-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">
+                        <?= $one_project['project_title']; ?>
+                    </h2>
+                    <p class="text-sm text-gray-600">
+                        <?= $one_project['project_subtitle']; ?>
+                    </p>
+                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+                </div>
             </div>
+            <?php } ?>
         </div>
-        <?php } ?>
+
+        <!-- Navigation Buttons -->
+        <button id="prev"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#8592;
+        </button>
+        <button id="next"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#8594;
+        </button>
     </div>
+
+
+
     <!-- ====== Products Carousel Section End -->
 
 
@@ -480,56 +477,66 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
     </script>
 
 
-
-    <!-- Include jQuery and Slick JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
     <script>
-    $(document).ready(function() {
-        // Check if jQuery is loaded
-        if (typeof jQuery === 'undefined') {
-            console.error('jQuery is not loaded!');
-            return;
-        }
+    const carousel = document.getElementById('carousel');
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
+    let items = Array.from(carousel.children);
+    const itemWidth = items[0].offsetWidth;
 
-        // Check if Slick is loaded
-        if (typeof $.fn.slick === 'undefined') {
-            console.error('Slick Carousel is not loaded!');
-            return;
-        }
+    let currentIndex = 1;
 
-        // Initialize Slick Carousel
-        $('.slick-container').slick({
-            infinite: true, // Enables infinite scrolling
-            slidesToShow: 4, // Number of slides to show at once
-            slidesToScroll: 1, // Number of slides to scroll at once
-            arrows: true, // Shows navigation arrows
-            prevArrow: '<button type="button" class="slick-prev">&#8592;</button>',
-            nextArrow: '<button type="button" class="slick-next">&#8594;</button>',
-            autoplay: false, // Set to true if you want autoplay
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        });
+    // Clone first and last items for loop effect
+    const firstClone = items[0].cloneNode(true);
+    const lastClone = items[items.length - 1].cloneNode(true);
+    carousel.appendChild(firstClone);
+    carousel.insertBefore(lastClone, items[0]);
+
+    // Update items after cloning
+    items = Array.from(carousel.children);
+
+    // Set unique IDs to clones for loop detection
+    firstClone.setAttribute('data-clone', 'first');
+    lastClone.setAttribute('data-clone', 'last');
+
+    // Function to update the carousel position
+    function updateCarousel() {
+        carousel.style.transition = 'transform 0.3s ease';
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    // Reset position when transition ends to create seamless loop
+    carousel.addEventListener('transitionend', () => {
+        if (items[currentIndex].getAttribute('data-clone') === 'last') {
+            carousel.style.transition = 'none';
+            currentIndex = 1;
+            carousel.style.transform = `translateX(0px)`;
+        } else if (items[currentIndex].getAttribute('data-clone') === 'first') {
+            carousel.style.transition = 'none';
+            currentIndex = items.length - 2;
+            carousel.style.transform = `translateX(-${itemWidth*2}px)`;
+        }
     });
+
+    // Event listeners for navigation buttons
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    // Initial update to start at the first actual item, not the clone
+    updateCarousel();
     </script>
+
 </body>
 
 </html>
