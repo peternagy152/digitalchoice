@@ -52,8 +52,15 @@
             z-index: 50;
             padding: 20px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
             flex-direction: column;
-            /* Stack items vertically on mobile */
+            /* Ensures the inner content isn't stretched */
+        }
+
+        .nav-content>div {
+            flex-grow: 0;
+            margin-top: 20px;
+            /* Add spacing if needed */
         }
     }
     </style>
@@ -81,12 +88,15 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="nav-content flex space-x-6">
-                <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-                <a class="text-white hover:text-primary" href="<?php echo $one_item['menu_item']['url']; ?>">
-                    <?php echo $one_item["menu_item"]['title']; ?>
-                </a>
-                <?php } ?>
+            <div class="nav-content">
+                <!-- Use another div inside to separate styling -->
+                <div class="flex flex-col space-y-6">
+                    <?php foreach ($header_content["main_menu"] as $one_item) { ?>
+                    <a class="text-white hover:text-primary" href="<?php echo $one_item['menu_item']['url']; ?>">
+                        <?php echo $one_item["menu_item"]['title']; ?>
+                    </a>
+                    <?php } ?>
+                </div>
             </div>
 
             <!-- Calendly Button -->
