@@ -243,10 +243,10 @@
             class="mx-auto container px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
             <!-- Text Content -->
             <div class="flex flex-col items-center lg:items-start container text-left">
-                <h1 class="max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223]">
+                <h1 class="max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223] text-pretty">
                     <?php echo $home_content['hero_title']; ?>
                 </h1>
-                <p class="mt-6 text-lg tracking-tight text-white max-w-4xl">
+                <p class="mt-6 text-lg tracking-tight text-white max-w-4xl text-pretty">
                     <?php echo $home_content['hero_desc']; ?>
                 </p>
                 <a href="<?php echo $home_content['hero_button']['url']; ?>"
@@ -279,16 +279,16 @@
     </div>
     <div class=" relative  top-[-66px] bottom-0 w-full">
         <div class=" max-w-md  flex justify-center mx-auto">
-            <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute ">
+            <div class=" mt-[-2.5rem] py-3 rounded-xl bg-[#e0e0e0] shadow-xl backdrop-blur-md absolute z-[80] ">
                 <div class="flex flex-wrap">
                     <?php foreach($home_content['services_repeater'] as $one_services): ?>
                     <div class="w-full md:w-1/3 p-4 relative">
                         <div class="p-3 text-center  inset-0 inset-x-auto">
                             <!-- Display Service Icon -->
                             <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
-                                class="mx-auto mb-3 max-w-[50px]">
+                                class="mx-auto mb-3 max-w-[39px]">
                             <!-- Display Service Title -->
-                            <h1 class="text-2xl font-semibold text-primary mb-2">
+                            <h1 class=" text-base  font-semibold text-primary mb-2  text-nowrap ">
                                 <?php echo $one_services['service_title']; ?></h1>
                             <!-- Display Service Description -->
                             <p class="text-sm text-gray-600"><?php echo $one_services['service_desc']; ?></p>
