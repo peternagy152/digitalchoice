@@ -429,17 +429,9 @@
     <!-- Projects  -->
 
     <div class="w-full relative">
-        <<div class="swiper multiple-slide-carousel swiper-container relative">
+        <div class="swiper multiple-slide-carousel swiper-container relative">
             <div class="swiper-wrapper mb-16">
-                <div class="swiper-slide relative">
-                    <button id="slider-button-left"
-                        class="swiper-button-prev group !p-2 flex justify-center items-center bg-primary hover:bg-secondary border border-solid border-primary transition-all duration-500 rounded-full absolute top-1/2 left-2 transform -translate-y-1/2 z-10">
-                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            viewBox="0 0 16 16" fill="none">
-                            <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor"
-                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                <div class="swiper-slide">
                     <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
                         <span class="text-2xl font-semibold text-indigo-600">Slide 1 </span>
                     </div>
@@ -454,83 +446,93 @@
                         <span class="text-2xl font-semibold text-indigo-600">Slide 3 </span>
                     </div>
                 </div>
-                <div class="swiper-slide relative">
-                    <button id="slider-button-right"
-                        class="swiper-button-next group !p-2 flex justify-center items-center bg-primary hover:bg-secondary border border-solid border-primary transition-all duration-500 rounded-full absolute top-1/2 right-2 transform -translate-y-1/2 z-10">
-                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                            viewBox="0 0 16 16" fill="none">
-                            <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor"
-                                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
+                <div class="swiper-slide">
                     <div class="bg-indigo-50 rounded-2xl h-96 flex justify-center items-center">
                         <span class="text-2xl font-semibold text-indigo-600">Slide 4 </span>
                     </div>
                 </div>
             </div>
-    </div>
+            <div class="absolute flex justify-center items-center  ">
+                <button id="slider-button-left left-0  w-fit top-[1/2]"
+                    class="swiper-button-prev group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full  hover:bg-indigo-600 !-translate-x-16"
+                    data-carousel-prev>
+                    <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10.0002 11.9999L6 7.99971L10.0025 3.99719" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <button id="slider-button-right right-0  w-fit top-[1/2]"
+                    class="swiper-button-next group !p-2 flex justify-center items-center border border-solid border-indigo-600 !w-12 !h-12 transition-all duration-500 rounded-full hover:bg-indigo-600 !translate-x-16"
+                    data-carousel-next>
+                    <svg class="h-5 w-5 text-indigo-600 group-hover:text-white" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M5.99984 4.00012L10 8.00029L5.99748 12.0028" stroke="currentColor" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
 
-    </div>
+        <script>
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
 
-    <script>
-    function createParticle() {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
+            const size = Math.random() * 5 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
 
-        const size = Math.random() * 5 + 2;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
+            const x = Math.random() * window.innerWidth;
+            // Set the particle to start 75vh from the bottom
+            const y = window.innerHeight * 0.75;
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
 
-        const x = Math.random() * window.innerWidth;
-        // Set the particle to start 75vh from the bottom
-        const y = window.innerHeight * 0.75;
-        particle.style.left = `${x}px`;
-        particle.style.top = `${y}px`;
+            // Array of the specified colors
+            const colors = ['#e0e0e0', '#fa4223', '#ffffff'];
+            // Randomly select one of the colors
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.backgroundColor = randomColor;
 
-        // Array of the specified colors
-        const colors = ['#e0e0e0', '#fa4223', '#ffffff'];
-        // Randomly select one of the colors
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.backgroundColor = randomColor;
+            const duration = Math.random() * 3 + 2;
+            particle.style.animation = `float-up ${duration}s linear`;
 
-        const duration = Math.random() * 3 + 2;
-        particle.style.animation = `float-up ${duration}s linear`;
+            document.getElementById('particles').appendChild(particle);
 
-        document.getElementById('particles').appendChild(particle);
-
-        setTimeout(() => {
-            particle.remove();
-        }, duration * 1000);
-    }
-
-    setInterval(createParticle, 50);
-    </script>
-    <script>
-    var swiper = new Swiper(".multiple-slide-carousel", {
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: ".multiple-slide-carousel .swiper-button-next",
-            prevEl: ".multiple-slide-carousel .swiper-button-prev",
-        },
-        breakpoints: {
-            1920: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            1028: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            990: {
-                slidesPerView: 1,
-                spaceBetween: 0
-            }
+            setTimeout(() => {
+                particle.remove();
+            }, duration * 1000);
         }
-    });
-    console.log("slider working")
-    </script>
+
+        setInterval(createParticle, 50);
+        </script>
+        <script>
+        var swiper = new Swiper(".multiple-slide-carousel", {
+            loop: true,
+            slidesPerView: 3,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".multiple-slide-carousel .swiper-button-next",
+                prevEl: ".multiple-slide-carousel .swiper-button-prev",
+            },
+            breakpoints: {
+                1920: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1028: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                990: {
+                    slidesPerView: 1,
+                    spaceBetween: 0
+                }
+            }
+        });
+        console.log("slider working")
+        </script>
 </body>
 
 </html>
