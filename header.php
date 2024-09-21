@@ -86,7 +86,7 @@
 <body class="font-saira">
     <?php $header_content = get_field("header_group", "options"); ?>
 
-    <nav class="w-full fixed bg-black z-50">
+    <nav class="w-full fixed bg-black z-[9999]">
         <div
             class="w-full flex container mx-auto items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md">
             <!-- Logo and Website Name -->

@@ -242,7 +242,7 @@
         <div id="particles" class="absolute inset-0 z-10"></div>
         <!-- Text content layer -->
         <div
-            class="mx-auto container px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
+            class="mx-auto container px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between lg:gap-x-[155px]">
             <!-- Text Content -->
             <div class="flex flex-col items-center lg:items-start container text-center lg:text-left">
                 <h1
@@ -274,7 +274,7 @@
             <!-- Image Section -->
             <div class="flex-shrink-0 mr-8 hidden lg:flex">
                 <img src="<?php echo $home_content['hero_image']; ?>" alt="Hero Image"
-                    class="w-full h-auto max-w-md object-cover">
+                    class="w-full h-auto max-w-[30rem] object-cover">
             </div>
         </div>
 
@@ -374,8 +374,10 @@
         <div
             class="my-10  px-4 sm:mt-12 sm:px-6   lg:px-4 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col-reverse lg:flex-row justify-between">
             <!-- Loop Through Dynamic Content -->
+
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center items-start">
+                <h2 class=" text-secondary text-sm ">About Us</h2>
                 <h1 class="text-xl tracking-tight font-extrabold text-primary  md:text-5xl text-pretty capitalize">
                     <?= $about['about_title'] ?>
                 </h1>
