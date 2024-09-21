@@ -44,9 +44,9 @@
                 <!-- Button -->
 
             </div>
-            <div class="flex gap-x-2">
+            <div class="flex space-x-2">
                 <a href="/calendy"
-                    class="flex border-[2px] rounded-[10px] items-center  border-primary text-white bg-primary   xl:px-5 px-4 py-[15px]  text-base  gap-2.5 hover:text-black hover:bg-gray-500  transition">
+                    class="flex border rounded-[40px] items-center   border-primary text-white bg-primary   xl:px-5 px-4 py-2 text-base  gap-2.5 hover:text-black hover:bg-gray-500  transition">
                     <span class=" icon flex items-center" style=" width: 12px !important;
     height: 12px !important;"> <svg class="w-full h-full" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
