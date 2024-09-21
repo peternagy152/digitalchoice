@@ -1224,6 +1224,10 @@ h2 {
     display: none;
   }
 
+  .lg\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
   .lg\:items-start {
     align-items: flex-start;
   }
