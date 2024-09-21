@@ -37,7 +37,7 @@ function digitalchoice_enqueue_styles() {
     wp_enqueue_style('digitalchoice-google-fonts', 'https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700&display=swap', false);
 
     // Enqueue the main stylesheet
-    wp_enqueue_style('digitalchoice-main-style', get_template_directory_uri() . '/assets/css/output.css');
+    wp_enqueue_style('digitalchoice-main-style', get_template_directory_uri() . '/assets/style/style.css');
 }
 add_action('wp_enqueue_scripts', 'digitalchoice_enqueue_styles');
 
