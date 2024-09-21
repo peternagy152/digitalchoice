@@ -23,10 +23,6 @@
         .nav-toggle {
             display: block;
             /* Show toggle button on mobile */
-            position: relative;
-            top: 20px;
-            left: 20px;
-            z-index: 60;
             cursor: pointer;
             height: 20px;
             width: 20px;
@@ -59,6 +55,14 @@
             /* Ensures the inner content isn't stretched */
         }
 
+        .bar {
+            height: 2px;
+            width: 15px;
+            background-color: black;
+            display: block;
+            margin: 3px 0;
+        }
+
         .nav-content>div {
             flex-grow: 0;
             margin-top: 20px;
@@ -72,9 +76,6 @@
 <body>
     <?php $header_content = get_field("header_group", "options"); ?>
 
-    <!-- Toggle Button for Mobile -->
-
-
     <nav class="container mx-auto">
         <div
             class="flex items-center justify-between my-3 px-2 lg:px-4 py-1 lg:py-2 border border-transparent rounded-[40px] bg-custom-gradient shadow-lg">
@@ -87,7 +88,6 @@
 
             <!-- Navigation Links -->
             <div class="nav-content">
-                <!-- Use another div inside to separate styling -->
                 <div class="flex flex-col space-y-6">
                     <?php foreach ($header_content["main_menu"] as $one_item) { ?>
                     <a class="text-white hover:text-primary" href="<?php echo $one_item['menu_item']['url']; ?>">
@@ -97,8 +97,16 @@
                 </div>
             </div>
 
-            <!-- Calendly Button -->
-            <div class="flex space-x-2">
+            <!-- Calendly Button and Slider Toggle -->
+            <div class="flex items-center space-x-2">
+                <!-- Slider Toggle Button -->
+                <div class="nav-toggle" onclick="toggleNav()">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <!-- Calendly Button -->
                 <a href="/calendy"
                     class="flex border rounded-[40px] items-center border-primary text-white bg-primary xl:px-5 px-4 py-2 text-base gap-2.5 hover:text-black hover:bg-gray-500 transition">
                     <span class="icon flex items-center" style="width: 12px; height: 12px;">
@@ -110,11 +118,6 @@
                     </span>
                     <span class="ml-2 text-white" style="font-weight: bold; font-size: 14px;">Calendly</span>
                 </a>
-            </div>
-            <div class="nav-toggle" onclick="toggleNav()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
             </div>
         </div>
     </nav>
