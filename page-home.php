@@ -240,32 +240,42 @@
         <div id="particles" class="absolute inset-0 z-10"></div>
         <!-- Text content layer -->
         <div
-            class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative items-center flex flex-col">
-            <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223] ">
-                <?php echo $home_content['hero_title']; ?>
-            </h1>
-            <p class="mx-auto mt-9 max-w-2xl text-lg tracking-tight text-white sm:mt-6">
-                <?php echo $home_content['hero_desc']; ?>
-            </p>
-            <a href="<?php echo $home_content['hero_button']['url'] ?>"
-                class="hidden lg:flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[40px] border-2 border-[#fa4223] hover:bg-transparent hover:text-black transition-colors">
-                <span class="flex items-center justify-center w-4 h-4">
-                    <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M17.091 0.800049V3.85547H6.90959V0.800049H3.85417V3.85547H0.800781V23.2001H23.1987V3.85547H20.1454V0.800049H17.091ZM3.85417 8.94513H20.1443V6.90886H3.85417V8.94513ZM3.85417 20.1456H20.1443V11.9995H3.85417V20.1456Z"
-                            fill="currentColor"></path>
-                    </svg>
-                </span>
-                <span class="calendly-text"><?php echo $home_content['hero_button']['title']; ?></span>
-                <span class="flex items-center justify-center w-4 h-4">
-                    <svg class="w-full h-full" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
-                            fill="currentColor"></path>
-                    </svg>
-                </span>
-            </a>
+            class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
+            <!-- Text Content -->
+            <div class="flex flex-col items-start max-w-2xl text-left">
+                <h1 class="max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223]">
+                    <?php echo $home_content['hero_title']; ?>
+                </h1>
+                <p class="mt-6 text-lg tracking-tight text-white">
+                    <?php echo $home_content['hero_desc']; ?>
+                </p>
+                <a href="<?php echo $home_content['hero_button']['url']; ?>"
+                    class="mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[40px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
+                    <span class="flex items-center justify-center w-4 h-4">
+                        <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.091 0.800049V3.85547H6.90959V0.800049H3.85417V3.85547H0.800781V23.2001H23.1987V3.85547H20.1454V0.800049H17.091ZM3.85417 8.94513H20.1443V6.90886H3.85417V8.94513ZM3.85417 20.1456H20.1443V11.9995H3.85417V20.1456Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    <span class="calendly-text"><?php echo $home_content['hero_button']['title']; ?></span>
+                    <span class="flex items-center justify-center w-4 h-4">
+                        <svg class="w-full h-full" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <!-- Image Section -->
+            <div class="flex-shrink-0 ml-8">
+                <img src="<?php echo $home_content['hero_image']; ?>" alt="Hero Image"
+                    class="w-full h-auto max-w-sm object-cover">
+            </div>
         </div>
+
+
     </div>
 
     <!-- Waves SVG positioned below the hero section -->
