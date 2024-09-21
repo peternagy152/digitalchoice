@@ -282,7 +282,7 @@
             <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] ">
                 <div class="flex flex-wrap lg:flex-nowrap">
                     <?php foreach($home_content['services_repeater'] as $one_services): ?>
-                    <div class="w-full min-w-1/3 p-4 relative">
+                    <div class="w-full min-w-[1/3] p-4 relative">
                         <div class="p-3 text-center  inset-0 inset-x-auto">
                             <!-- Display Service Icon -->
                             <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
