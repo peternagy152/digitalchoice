@@ -279,7 +279,7 @@
     </div>
     <div class=" relative  top-[-66px] bottom-0 w-full">
         <div class="flex justify-center mx-auto max-w-[980px]">
-            <div class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] w-full">
+            <div class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] w-[50%]">
                 <div class="flex flex-wrap lg:flex-nowrap">
                     <?php 
                 $totalItems = count($home_content['services_repeater']);
