@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <?php $home_content = get_field("home_group") ;  ?>
-<h1> Welcome From Home Page</h1>
 
 
 <!--Hero Tailwind -->
@@ -170,12 +169,15 @@
     </style>
 </head>
 
-<body class="bg-animated  h-[75vh] flex items-center justify-center p-4 overflow-hidden">
-    <div id="particles"></div>
+<body class="h-[75vh] flex items-center justify-center p-4 overflow-hidden">
     <div class="relative w-full h-[75vh] flex items-center justify-center bg-cover bg-center"
         style="background-image: url('https://demos.creative-tim.com/soft-ui-design-system/assets/img/curved-images/curved.jpg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Optional overlay for better text contrast -->
-        <div class="text-center z-10 relative">
+        <!-- Optional overlay for better text contrast -->
+        <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
+        <!-- Particles layer -->
+        <div id="particles" class="absolute inset-0 z-10"></div>
+        <!-- Text content layer -->
+        <div class="text-center z-20 relative">
             <h1 class="text-6xl font-bold mb-4 text-white neon-text glitch hover-3d" data-text="CYBERSPACE">CYBERSPACE
             </h1>
             <p class="text-xl text-[#fa4223] mb-8">Enter the digital realm of infinite possibilities</p>
@@ -219,7 +221,29 @@
     setInterval(createParticle, 50);
     </script>
 
+    <style>
+    /* Particle styles */
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    /* Particle animation */
+    @keyframes float-up {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateY(-100vh);
+            opacity: 0;
+        }
+    }
+    </style>
 </body>
+
 
 </html>
 <!-- Hero Banner  -->
