@@ -348,13 +348,19 @@
                 </p>
                 <!-- Button Section -->
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                    <div class="rounded-md shadow">
-                        <a href="<?= $about['about_button']['url'] ?>"
-                            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
-                            <?= $about['about_button']['title'] ?>
-                        </a>
-                    </div>
+                    <a href="<?= $about['about_button']['url'] ?>"
+                        class="mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
 
+                        <span class="calendly-text"><?= $about['about_button']['title'] ?></span>
+                        <span class="flex items-center justify-center w-4 h-4">
+                            <svg class="w-full h-full" viewBox="0 0 26 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
                 <!-- End of Button Section -->
             </div>
