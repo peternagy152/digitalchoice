@@ -514,7 +514,7 @@
         } else if (items[currentIndex].getAttribute('data-clone') === 'first') {
             carousel.style.transition = 'none';
             currentIndex = items.length - 2;
-            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            carousel.style.transform = `translateX(-${itemWidth*2}px)`;
         }
     });
 
