@@ -7,12 +7,16 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
     <style>
-    /* Hide the nav-content initially */
-    .nav-content {
-        display: none;
+    .nav-open {
+        overflow: hidden;
     }
 
-    /* Show the nav-content when nav-open is added to the body */
+    .nav-content {
+        display: none;
+        overflow-y: auto;
+
+    }
+
     .nav-open .nav-content {
         display: flex;
         transform: translateX(0);
@@ -24,9 +28,9 @@
 <body class="font-saira">
     <?php $header_content = get_field("header_group", "options"); ?>
 
-    <nav class="">
+    <nav class=" w-full fixed bg-black z-50 ">
         <div
-            class="fixed w-full flex container  z-50 items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md rounded-[40px]">
+            class=" w-full flex container  mx-auto  items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md ">
             <!-- Logo and Website Name -->
             <div class="flex items-center gap-2">
                 <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-10 w-10">
@@ -81,7 +85,7 @@
 
                 <!-- Close Button -->
                 <button
-                    class="absolute top-8 right-[-76px] text-white text-[18px] cursor-pointer border-2 px-3 py-1 rounded-full border-[#fa4223] bg-[#fa4223] hover:bg-[#e0e0e0]"
+                    class="absolute top-[1rem] right-[-59px] text-white text-[18px] cursor-pointer border-2 px-3 py-1 rounded-full border-[#fa4223] bg-[#fa4223] hover:bg-[#e0e0e0]"
                     onclick="toggleNav()">X</button>
 
                 <!-- Calendly Button -->
@@ -116,7 +120,14 @@
 
     <script>
     function toggleNav() {
-        document.body.classList.toggle('nav-open');
+        const body = document.body;
+        body.classList.toggle('nav-open');
+
+        if (body.classList.contains('nav-open')) {
+            body.style.overflow = 'hidden';
+        } else {
+            body.style.overflow = '';
+        }
     }
     </script>
 
