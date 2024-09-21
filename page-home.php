@@ -13,6 +13,9 @@
     <title>Extreme Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <style>
     .bg-animated {
         background: linear-gradient(-45deg, #fa4223, #e0e0e0, #ffffff, #e0e0e0);
@@ -407,11 +410,12 @@
     </section>
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
-    <div class="carousel-container relative w-full container mx-auto overflow-hidden">
-        <!-- Carousel Items -->
-        <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
+
+    <div class="swiper-container relative w-full container mx-auto overflow-hidden">
+        <!-- Swiper Wrapper -->
+        <div class="swiper-wrapper">
             <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-            <div class="item min-w-[25%] p-4">
+            <div class="swiper-slide p-4">
                 <div class="bg-white rounded-lg shadow p-4">
                     <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
                     <h2 class="mt-2 text-lg font-bold">
@@ -427,16 +431,9 @@
         </div>
 
         <!-- Navigation Buttons -->
-        <button id="prev"
-            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-            &#8592;
-        </button>
-        <button id="next"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-            &#8594;
-        </button>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
-
 
 
     <!-- ====== Products Carousel Section End -->
@@ -477,66 +474,19 @@
     </script>
 
 
+
     <script>
-    const carousel = document.getElementById('carousel');
-    const nextButton = document.getElementById('next');
-    const prevButton = document.getElementById('prev');
-    let items = Array.from(carousel.children);
-    const itemWidth = items[0].offsetWidth;
-
-    let currentIndex = 1;
-
-    // Clone first and last items for loop effect
-    const firstClone = items[0].cloneNode(true);
-    const lastClone = items[items.length - 1].cloneNode(true);
-    carousel.appendChild(firstClone);
-    carousel.insertBefore(lastClone, items[0]);
-
-    // Update items after cloning
-    items = Array.from(carousel.children);
-
-    // Set unique IDs to clones for loop detection
-    firstClone.setAttribute('data-clone', 'first');
-    lastClone.setAttribute('data-clone', 'last');
-
-    // Function to update the carousel position
-    function updateCarousel() {
-        carousel.style.transition = 'transform 0.3s ease';
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }
-
-    // Reset position when transition ends to create seamless loop
-    carousel.addEventListener('transitionend', () => {
-        if (items[currentIndex].getAttribute('data-clone') === 'last') {
-            carousel.style.transition = 'none';
-            currentIndex = 1;
-            carousel.style.transform = `translateX(0px)`;
-        } else if (items[currentIndex].getAttribute('data-clone') === 'first') {
-            carousel.style.transition = 'none';
-            currentIndex = items.length - 2;
-            carousel.style.transform = `translateX(-${itemWidth*2}px)`;
-        }
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+        loop: true, // Enable loop mode
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 4, // Adjust as needed
+        spaceBetween: 20, // Adjust spacing between slides
     });
-
-    // Event listeners for navigation buttons
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < items.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-
-    // Initial update to start at the first actual item, not the clone
-    updateCarousel();
     </script>
-
 </body>
 
 </html>
