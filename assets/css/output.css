@@ -692,6 +692,11 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .ml-8 {
   margin-left: 2rem;
 }
@@ -840,6 +845,10 @@ video {
   width: 50%;
 }
 
+.w-\[90\%\] {
+  width: 90%;
+}
+
 .min-w-\[1\/3\] {
   min-width: 1/3;
 }
@@ -947,6 +956,11 @@ video {
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-x-\[7\.75rem\] {
+  -moz-column-gap: 7.75rem;
+       column-gap: 7.75rem;
 }
 
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {

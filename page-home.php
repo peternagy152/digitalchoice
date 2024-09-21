@@ -279,8 +279,9 @@
     </div>
     <div class=" relative  top-[-66px] bottom-0 w-full">
         <div class="flex justify-center mx-auto max-w-[980px]">
-            <div class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] w-[50%]">
-                <div class="flex flex-wrap lg:flex-nowrap">
+            <div
+                class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] w-[90%] mx-4 lg:w-[50%]">
+                <div class="flex flex-wrap flex-col lg:flex-row lg:flex-nowrap">
                     <?php 
                 $totalItems = count($home_content['services_repeater']);
                 foreach($home_content['services_repeater'] as $index => $one_services): 
@@ -335,7 +336,7 @@
     <section class="sm:mt-6 lg:mt-8 mt-12 container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div
-            class="my-10  px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-4 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row justify-between">
+            class="my-10  px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-4 xl:mt-28 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col lg:flex-row justify-between">
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">
@@ -425,15 +426,7 @@
 <!-- Services Array  -->
 
 
-<!--  About Section  -->
-<?php foreach($home_content['about_repeater'] as $about){ ?>
-<img src="<?= $about['about_image'] ?>" alt="">
-<h3><?= $about['about_title'] ?></h3>
-<p> <?= $about['about_content'] ?> </p>
-<a href="<?= $about['about_button']['url'] ?>"> <?= $about['about_button']['title'] ?></a>
 
-
-<?php  } ?>
 
 <!-- Projects  -->
 <h2><?php echo $home_content['projects_section_title'] ?></h2>
