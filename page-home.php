@@ -180,7 +180,7 @@
     .waves {
         position: relative;
         width: 100%;
-        height: 16vh;
+        height: 10vh;
         margin-bottom: -7px;
         min-height: 100px;
         max-height: 150px;
@@ -277,26 +277,47 @@
 
 
     </div>
+    <div class=" relative  top-[-66px] bottom-0 w-full">
+        <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute container mx-auto">
+            <div class="flex flex-wrap">
+                <?php foreach($home_content['services_repeater'] as $one_services): ?>
+                <div class="w-full md:w-1/3 p-4 relative">
+                    <div class="p-3 text-center bg-white rounded-lg shadow-lg">
+                        <!-- Display Service Icon -->
+                        <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
+                            class="mx-auto mb-3 max-w-[50px]">
+                        <!-- Display Service Title -->
+                        <h1 class="text-2xl font-semibold text-primary mb-2">
+                            <?php echo $one_services['service_title']; ?></h1>
+                        <!-- Display Service Description -->
+                        <p class="text-sm text-gray-600"><?php echo $one_services['service_desc']; ?></p>
+                    </div>
+                    <hr class="absolute right-0 top-0 h-full border-r border-gray-200 hidden md:block">
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
 
-    <!-- Waves SVG positioned below the hero section -->
-    <div class="relative w-full top-[-53px] bottom-0 z-[12]">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
-                </path>
-            </defs>
-            <g class="moving-waves">
-                <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40)"></use>
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
-                <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
-                <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
-                <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95)"></use>
-            </g>
-        </svg>
+        <!-- Waves SVG positioned below the hero section -->
+        <div class="relative w-full z-[70]">
+
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                    </path>
+                </defs>
+                <g class="moving-waves">
+                    <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95)"></use>
+                </g>
+            </svg>
+        </div>
     </div>
-
     <script>
     function createParticle() {
         const particle = document.createElement('div');
