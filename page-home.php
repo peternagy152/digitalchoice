@@ -246,10 +246,10 @@
             <!-- Text Content -->
             <div class="flex flex-col items-center lg:items-start container text-center lg:text-left">
                 <h1
-                    class="max-w-4xl font-display text-4xl lg:text-5xl font-medium tracking-tight text-[#fa4223] text-pretty">
+                    class="max-w-4xl font-display text-4xl lg:text-5xl font-medium tracking-tight text-[#fa4223] text-pretty capitalize">
                     <?php echo $home_content['hero_title']; ?>
                 </h1>
-                <p class="mt-6 text-base lg:text-lg tracking-tight text-white max-w-4xl text-pretty">
+                <p class="mt-6 text-base lg:text-lg tracking-tight text-white max-w-4xl text-pretty ">
                     <?php echo $home_content['hero_desc']; ?>
                 </p>
                 <a href="<?php echo $home_content['hero_button']['url']; ?>"
@@ -376,7 +376,7 @@
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center items-start">
-                <h1 class="text-xl tracking-tight font-extrabold text-primary  md:text-5xl text-pretty">
+                <h1 class="text-xl tracking-tight font-extrabold text-primary  md:text-5xl text-pretty capitalize">
                     <?= $about['about_title'] ?>
                 </h1>
                 <p
@@ -417,7 +417,7 @@
     <!-- ====== Products Carousel Section Start -->
     <div class="glide">
         <h2
-            class="my-4 text-pretty font-extrabold text-2xl  lg:text-4xl text-primary container mx-auto flex text-center items-center justify-center">
+            class="my-4 text-pretty font-extrabold text-2xl  lg:text-4xl text-primary container mx-auto flex text-center items-center justify-center capitalize">
             <?php echo $home_content['projects_section_title'] ?></h2>
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
@@ -676,10 +676,10 @@
             <h3 class="text-primary md:text-[40px] text-xl  font-normal text-pretty ">
                 <?= $home_content['last_subtitle'] ?></h3>
 
-            <h3 class="text-black md:text-[96px] text-[36px] text-pretty font-bold "><?= $home_content['last_title'] ?>
+            <h3 class="text-black md:text-[96px] text-[36px] text-pretty font-bold  capitalize">
+                <?= $home_content['last_title'] ?>
             </h3>
-            <a href="<?php echo $home_content['last_button']['url'] ?>">
-                <?php echo $home_content['last_button']['title'] ;  ?></a>
+
             <a href="<?php echo $home_content['last_button']['url'] ?>"
                 class="mt-6 flex text lg:items-center gap-2 items-center bg-primary text-white px-4 py-2 rounded-[10px] border-2 border-primary hover:border-white hover:bg-white  hover:text-black transition-colors">
                 <span class="flex items-center justify-center w-4 h-4">
