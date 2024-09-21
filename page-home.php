@@ -278,8 +278,8 @@
 
     </div>
     <div class=" relative  top-[-66px] bottom-0 w-full">
-        <div class=" max-w-md mx-auto">
-            <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute container mx-auto">
+        <div class=" max-w-md  flex justify-center mx-auto">
+            <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute ">
                 <div class="flex flex-wrap">
                     <?php foreach($home_content['services_repeater'] as $one_services): ?>
                     <div class="w-full md:w-1/3 p-4 relative">
