@@ -471,9 +471,9 @@
 
     <!-- ====== FAQS Section End -->
     <div class="bg-black ">
-        <div class="max-w-screen-xl mx-auto px-5  min-h-sceen my-4">
+        <div class="max-w-screen-xl mx-auto px-5  min-h-sceen mt-[5rem] py-6">
             <div class="flex flex-col items-center">
-                <h2 class="font-bold text-5xl mt-5 text-white tracking-tight">
+                <h2 class="font-bold text-5xl  text-white tracking-tight">
                     FAQ
                 </h2>
                 <p class="text-primary text-xl mt-3">
