@@ -364,135 +364,70 @@
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
-        <div class="container mx-auto">
-            <div class="-mx-4 flex flex-wrap">
-                <div class="w-full px-4">
-                    <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-[70px]">
-                        <span class="mb-2 block text-lg font-semibold text-primary">
-                            Most Popular Projects
-                        </span>
-                        <h2
-                            class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:leading-[1.2] md:text-[40px]">
-                            Best Projects
-                        </h2>
-                        <p class="text-base text-body-color dark:text-dark-6">
-                            There are many variations of passages of Lorem Ipsum available but the majority have
-                            suffered
-                            alteration in some form.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Alpine.js Slider Setup -->
-            <div x-data="{ activeSlide: 0 }">
-                <div class="relative flex justify-center">
-                    <div class="relative w-full">
-                        <!-- Carousel Container -->
-                        <div class="flex mx-auto h-auto w-full max-w-[960px] overflow-hidden transition-all"
-                            x-ref="carousel">
-                            <!-- PHP Loop for Projects -->
-                            <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-                            <div class="min-w-[300px] px-4">
-                                <div class="relative mb-5 overflow-hidden rounded-md">
-                                    <img src="<?php echo $one_project['project_image']; ?>" alt="project"
-                                        class="w-full" />
-                                    <h2 class="absolute inset-0 flex items-center justify-center text-white text-2xl">
-                                        Kareem</h2>
-                                </div>
-                                <h3 class="text-center"><?= $one_project['project_title']; ?></h3>
-                                <h4 class="text-center"><?= $one_project['project_subtitle']; ?></h4>
-                            </div>
-                            <?php } ?>
-                        </div>
-                        <!-- Navigation Buttons -->
-                        <div class="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 justify-between px-4">
-                            <button
-                                class="h-10 w-10 rounded-full bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white"
-                                @click="$refs.carousel.scrollLeft -= $refs.carousel.offsetWidth / <?= count($home_content['project_repeater']); ?>; activeSlide = activeSlide === 0 ? <?= count($home_content['project_repeater']) - 1; ?> : activeSlide - 1;">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button
-                                class="h-10 w-10 rounded-full bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white"
-                                @click="$refs.carousel.scrollLeft += $refs.carousel.offsetWidth / <?= count($home_content['project_repeater']); ?>; activeSlide = activeSlide === <?= count($home_content['project_repeater']) - 1; ?> ? 0 : activeSlide + 1;">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Projects  -->
-    <!-- ====== Products Carousel Section Start -->
-    <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
-        <div class="container mx-auto">
-            <div class="-mx-4 flex flex-wrap">
-                <div class="w-full px-4">
-                    <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-[70px]">
-                        <span class="mb-2 block text-lg font-semibold text-primary">
-                            Most Popular Products
-                        </span>
-                        <h2
-                            class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:leading-[1.2] md:text-[40px]">
-                            Best Selling Items
-                        </h2>
-                        <p class="text-base text-body-color dark:text-dark-6">
-                            There are many variations of passages of Lorem Ipsum available but the majority have
-                            suffered
-                            alteration in some form.
-                        </p>
-                    </div>
+    <div class="carousel-container relative w-full max-w-4xl mx-auto overflow-hidden">
+        <!-- Carousel Items -->
+        <div id="carousel" class="flex transition-transform duration-300">
+            <div class="item min-w-full p-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="https://via.placeholder.com/150" alt="Item 1" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">Item 1</h2>
+                    <p class="text-sm text-gray-600">Description of Item 1</p>
+                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
                 </div>
             </div>
-            <div x-data="{ activeSlide: 0, slides: [0, 1, 2, 3, 4] }">
-                <div class="relative flex justify-center">
-                    <div class="relative w-full">
-                        <div class="flex mx-auto h-auto w-full max-w-[960px] overflow-hidden transition-all"
-                            x-ref="carousel">
-                            <template x-for="(slide, index) in slides" :key="index">
-                                <div class="min-w-[300px] px-4">
-                                    <div class="relative mb-5 overflow-hidden rounded-md">
-                                        <img :src="'https://img.freepik.com/free-psd/prom-party-landing-page-template_23-2148931868.jpg?size=626&ext=jpg&ga=GA1.1.537945044.1726910375&semt=ais_hybrid' + (index + 1) + '.jpg'"
-                                            alt="product" class="w-full" />
-                                        <h2
-                                            class="absolute inset-0 flex items-center justify-center text-white text-2xl">
-                                            Kareem</h2>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-                        <div class="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 justify-between px-4">
-                            <button
-                                class="h-10 w-10 rounded-full bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white"
-                                @click="activeSlide = activeSlide === 0 ? slides.length - 1 : activeSlide - 1; $refs.carousel.scrollLeft -= $refs.carousel.offsetWidth;">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" class="fill-current">
-                                    <path
-                                        d="M17.5 9.3125H4.15625L9.46875 3.90625C9.75 3.625 9.75 3.1875 9.46875 2.90625C9.1875 2.625 8.75 2.625 8.46875 2.90625L2 9.46875C1.71875 9.75 1.71875 10.1875 2 10.4688L8.46875 17.0312C8.59375 17.1563 8.78125 17.25 8.96875 17.25C9.15625 17.25 9.3125 17.1875 9.46875 17.0625C9.75 16.7812 9.75 16.3438 9.46875 16.0625L4.1875 10.7187H17.5C17.875 10.7187 18.1875 10.4062 18.1875 10.0312C18.1875 9.625 17.875 9.3125 17.5 9.3125Z" />
-                                </svg>
-                            </button>
-                            <button
-                                class="h-10 w-10 rounded-full bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white"
-                                @click="activeSlide = activeSlide === slides.length - 1 ? 0 : activeSlide + 1; $refs.carousel.scrollLeft += $refs.carousel.offsetWidth;">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" class="fill-current">
-                                    <path
-                                        d="M18 9.5L11.5312 2.9375C11.25 2.65625 10.8125 2.65625 10.5312 2.9375C10.25 3.21875 10.25 3.65625 10.5312 3.9375L15.7812 9.28125H2.5C2.125 9.28125 1.8125 9.59375 1.8125 9.96875C1.8125 10.3437 2.125 10.6875 2.5 10.6875H15.8437L10.5312 16.0938C10.25 16.375 10.25 16.8125 10.5312 17.0938C10.6562 17.2188 10.8437 17.2813 11.0312 17.2813C11.2187 17.2813 11.4062 17.2188 11.5312 17.0625L18 10.5C18.2812 10.2187 18.2812 9.78125 18 9.5Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+            <div class="item min-w-full p-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="https://via.placeholder.com/150" alt="Item 2" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">Item 2</h2>
+                    <p class="text-sm text-gray-600">Description of Item 2</p>
+                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
                 </div>
             </div>
+            <!-- Add more items as needed -->
         </div>
-    </section>
+
+        <!-- Navigation Buttons -->
+        <button id="prev"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#8592;
+        </button>
+        <button id="next"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#8594;
+        </button>
+    </div>
 
     <!-- ====== Products Carousel Section End -->
+    <script>
+    const carousel = document.getElementById('carousel');
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
 
+    let currentIndex = 0;
 
+    // Function to update the carousel position
+    function updateCarousel() {
+        const itemWidth = carousel.children[0].offsetWidth;
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    // Event listeners for navigation buttons
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < carousel.children.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    </script>
     <script>
     function createParticle() {
         const particle = document.createElement('div');
