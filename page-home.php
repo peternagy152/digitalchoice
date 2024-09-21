@@ -17,6 +17,7 @@
         background: linear-gradient(-45deg, #fa4223, #e0e0e0, #ffffff, #e0e0e0);
         background-size: 400% 400%;
         animation: gradient 15s ease infinite;
+        height: 70vh;
     }
 
     @keyframes gradient {
@@ -227,6 +228,7 @@
         position: absolute;
         border-radius: 50%;
         pointer-events: none;
+
     }
 
     /* Particle animation */
