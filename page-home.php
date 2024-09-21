@@ -332,13 +332,13 @@
 
     <!-- about us  -->
 
-    <section class="sm:mt-6 lg:mt-8 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="sm:mt-6 lg:mt-8 mt-12 container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div
             class="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
-            <div class="sm:text-center lg:text-left">
+            <div class="sm:text-center lg:text-left w-full lg:w-[50%]">
                 <h1 class="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
                     <?= $about['about_title'] ?>
                 </h1>
