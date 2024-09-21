@@ -29,8 +29,8 @@
             <div class="flex items-center space-x-2">
                 <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-8 w-8">
                 <!-- Adjust the path and size of the logo as needed -->
-                <span class="text-black text-lg font-bold">Digital</span> <span
-                    class=" text-primary font-bold">Choice</span>
+                <span class="text-black text-xl font-bold">Digital</span> <span
+                    class=" text-primary text-xl  font-bold">Choice</span>
             </div>
 
             <!-- Navigation Links -->

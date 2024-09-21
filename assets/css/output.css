@@ -675,7 +675,7 @@ video {
 
 .bg-primary {
   --tw-bg-opacity: 1;
-  background-color: #fa4223;
+  background-color: rgb(0 26 112 / var(--tw-bg-opacity));
 }
 
 .px-4 {
@@ -702,6 +702,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -713,7 +718,7 @@ video {
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: #fa4223;
+  color: rgb(0 26 112 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -764,7 +769,7 @@ video {
 }
 
 .bg-custom-gradient {
-  background: linear-gradient(90deg, #ff510a75, #e7d0aba1);
+  background: linear-gradient(90deg, #ffb19259, #758aa5a1);
 }
 
 .icon {
