@@ -10,7 +10,7 @@ module.exports = {
         primary: {
           DEFAULT: "#fa4223",
         },
-        secondary: "e0e0e0",
+        secondary: "#e0e0e0",
       },
     },
   },
