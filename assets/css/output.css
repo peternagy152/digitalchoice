@@ -739,6 +739,11 @@ video {
   height: 12px !important;
 }
 
+.icon1 {
+  width: 12px !important;
+  height: 12px !important;
+}
+
 .hover\:bg-gray-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));

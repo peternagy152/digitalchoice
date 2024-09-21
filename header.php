@@ -16,7 +16,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link href="<?php echo get_template_directory_uri() . '/assets/css/output.css'; ?>" rel="stylesheet">
+    <link href=" /assets/css/output.css " rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
@@ -58,7 +58,7 @@
 
 
                     <span class="ml-2 text-white"
-                        style=" font-weight: bold; font-size: 14px; margin-left: 4px;">Calendly</span>
+                        style=" font-weight: bold; font-size: 14px; margin-left: 4px; margin-right: 4px;">Calendly</span>
                     <span class=" icon flex items-center" style=" width: 12px !important;
     height: 12px !important;">
                         <svg class="w-full h-full" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
