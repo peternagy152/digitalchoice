@@ -361,7 +361,7 @@
 
             <!-- Dynamic Image and Content Section -->
             <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                <img class="h-56 w-full object-fill sm:h-72 md:h-96 lg:w-full lg:h-full"
+                <img class="h-56 w-full object-fill sm:h-72 md:h-96 lg:w-[81%] lg:h-full"
                     src="<?= $about['about_image'] ?>" alt="<?= $about['about_title'] ?>">
 
             </div>

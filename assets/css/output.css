@@ -1628,6 +1628,10 @@ h2 {
     width: 50%;
   }
 
+  .lg\:w-\[81\%\] {
+    width: 81%;
+  }
+
   .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
