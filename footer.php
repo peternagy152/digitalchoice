@@ -15,27 +15,19 @@
     <div class="bg-black ">
         <div class="container px-6 py-8 mx-auto">
             <div class="flex flex-col items-center text-center">
-                <a href="#">
-                    <img class="w-auto h-7"
-                        src="https://darkgray-crane-441726.hostingersite.com/wp-content/uploads/2024/09/logoDigitalchoice1.png"
-                        alt="">
+                <a href="#" class="flex items-center gap-2">
+                    <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-10 w-10">
+                    <span class="text-white font-bold text-[22px]">Digital <span
+                            class="text-[#fa4223]">Choice</span></span>
                 </a>
 
-                <div class="flex flex-wrap justify-center mt-6 -mx-4">
-                    <a href="#" class="mx-4 text-sm text-white transition-colors duration-300 hover:text-primary  "
-                        aria-label="Reddit"> Home </a>
-
-                    <a href="#" class="mx-4 text-sm text-white transition-colors duration-300 hover:text-primary  "
-                        aria-label="Reddit"> About </a>
-
-                    <a href="#" class="mx-4 text-sm text-white transition-colors duration-300 hover:text-primary  "
-                        aria-label="Reddit"> Teams </a>
-
-                    <a href="#" class="mx-4 text-sm text-white transition-colors duration-300 hover:text-primary  "
-                        aria-label="Reddit"> Privacy </a>
-
-                    <a href="#" class="mx-4 text-sm text-white transition-colors duration-300 hover:text-primary  "
-                        aria-label="Reddit"> Cookies </a>
+                <div class="flex gap-4">
+                    <?php foreach ($header_content["main_menu"] as $one_item) { ?>
+                    <a class="text-white text-[18px] hover:text-[#fa4223] transition-colors"
+                        href="<?php echo $one_item['menu_item']['url']; ?>">
+                        <?php echo $one_item["menu_item"]['title']; ?>
+                    </a>
+                    <?php } ?>
                 </div>
 
             </div>

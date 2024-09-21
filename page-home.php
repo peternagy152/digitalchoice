@@ -377,7 +377,7 @@
 
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center items-start">
-                <h2 class=" text-secondary text-sm ">About Us</h2>
+                <h2 class=" text-secondary text-sm mb-[20px]">About Us</h2>
                 <h1 class="text-xl tracking-tight font-extrabold text-primary  md:text-5xl text-pretty capitalize">
                     <?= $about['about_title'] ?>
                 </h1>
