@@ -45,7 +45,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 75vh;
     }
 
     .glitch::before {
@@ -149,7 +149,7 @@
     }
 
     .hover-3d {
-        transition: transform 0.3s;
+        transition: transform 0.5s;
     }
 
     .hover-3d:hover {
@@ -163,7 +163,7 @@
 
     @keyframes float-up {
         to {
-            transform: translateY(-100vh) rotate(360deg);
+            transform: translateY(-75vh) rotate(360deg);
             opacity: 0;
         }
     }
