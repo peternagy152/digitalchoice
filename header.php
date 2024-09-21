@@ -26,11 +26,11 @@
         <div $true-blue: #3162C5ff; aerospace-orange: #FF510Aff;
             class="flex items-center justify-between my-3 px-4 py-2 border  border-transparent rounded-[40px] bg-custom-gradient shadow-lg">
             <!-- Logo and Website Name -->
-            <div class="flex items-center space-x-2">
-                <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-8 w-8">
+            <div class="flex items-center space-x-1">
+                <img src="<?php echo $header_content['logo']; ?>" alt="" class=" h-12 w-12">
                 <!-- Adjust the path and size of the logo as needed -->
-                <span class="text-black text-xl font-bold">Digital</span> <span
-                    class=" text-primary text-xl  font-bold">Choice</span>
+                <span class="text-black text-2xl font-bold">Digital</span> <span
+                    class=" text-primary text-2xl  font-bold">Choice</span>
             </div>
 
             <!-- Navigation Links -->
