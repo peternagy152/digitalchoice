@@ -6,46 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <style>
-    /* Basic styling */
-    .hidden {
-        display: none;
-    }
-
-    .nav-open .nav-content {
-        transform: translateX(0);
-    }
-
+    /* Default styles for larger screens */
     .nav-content {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 80%;
-        max-width: 300px;
-        height: 100vh;
-        background: #3162C5;
-        /* Adjust this color */
-        z-index: 50;
-        padding: 20px;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .nav-toggle {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        z-index: 60;
-        cursor: pointer;
+        display: none;
+        /* Hide the toggle button by default */
     }
 
-    .nav-toggle .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        background-color: #fff;
-        transition: 0.4s;
+    /* Responsive styles for mobile devices */
+    @media (max-width: 768px) {
+        .nav-toggle {
+            display: block;
+            /* Show toggle button on mobile */
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 60;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .nav-open .nav-content {
+            transform: translateX(0);
+        }
+
+        .nav-content {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: #3162C5;
+            /* Adjust the color as needed */
+            z-index: 50;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            /* Stack items vertically on mobile */
+        }
     }
     </style>
     <?php wp_head(); ?>
@@ -61,7 +70,7 @@
         <span class="bar"></span>
     </div>
 
-    <nav class="nav-content">
+    <nav class="container mx-auto">
         <div
             class="flex items-center justify-between my-3 px-2 lg:px-4 py-1 lg:py-2 border border-transparent rounded-[40px] bg-custom-gradient shadow-lg">
             <!-- Logo and Website Name -->
@@ -72,7 +81,7 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="flex flex-col space-y-4">
+            <div class="nav-content flex space-x-6">
                 <?php foreach ($header_content["main_menu"] as $one_item) { ?>
                 <a class="text-white hover:text-primary" href="<?php echo $one_item['menu_item']['url']; ?>">
                     <?php echo $one_item["menu_item"]['title']; ?>
@@ -81,7 +90,7 @@
             </div>
 
             <!-- Calendly Button -->
-            <div class="flex mt-4">
+            <div class="flex space-x-2">
                 <a href="/calendy"
                     class="flex border rounded-[40px] items-center border-primary text-white bg-primary xl:px-5 px-4 py-2 text-base gap-2.5 hover:text-black hover:bg-gray-500 transition">
                     <span class="icon flex items-center" style="width: 12px; height: 12px;">
@@ -96,23 +105,6 @@
             </div>
         </div>
     </nav>
-
-    <div id="page" class="site">
-        <header id="masthead" class="site-header">
-            <!-- LOGO -->
-            <img src="<?php echo $header_content['logo']; ?>" alt="">
-
-            <!-- Menu Items -->
-            <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-            <a href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?></a>
-            <?php } ?>
-
-            <!-- Header Button -->
-            <a href="<?php echo $header_content['header_button']['url']; ?>">
-                <?php echo $header_content['header_button']['title']; ?>
-            </a>
-        </header>
-    </div>
 
     <script>
     function toggleNav() {
