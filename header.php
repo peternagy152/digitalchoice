@@ -34,9 +34,9 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="flex space-x-6 group">
+            <div class="flex space-x-6 ">
                 <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-                <a class="text-white group-hover:underline decoration-white"
+                <a class="text-white hover:text-primary "
                     href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?></a>
                 <?php } ?>
 
