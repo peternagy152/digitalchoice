@@ -375,8 +375,8 @@
             class="my-10  px-4 sm:mt-12 sm:px-6   lg:px-4 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col-reverse lg:flex-row justify-between">
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
-            <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">
-                <h1 class="text-lg tracking-tight font-extrabold text-primary  md:text-5xl text-pretty">
+            <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center items-start">
+                <h1 class="text-xl tracking-tight font-extrabold text-primary  md:text-5xl text-pretty">
                     <?= $about['about_title'] ?>
                 </h1>
                 <p
@@ -404,7 +404,7 @@
 
             <!-- Dynamic Image and Content Section -->
             <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                <img class="h-56 w-full object-fill sm:h-72 md:h-96 lg:w-[81%] lg:h-full"
+                <img class="h-56 w-[90%] object-fill sm:h-72 md:h-96 lg:w-[81%] lg:h-full"
                     src="<?= $about['about_image'] ?>" alt="<?= $about['about_title'] ?>">
 
             </div>
