@@ -338,6 +338,9 @@
 
     <div
         class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md relative lg:absolute z-[80] w-[90%] mx-4 lg:w-[50%] block  lg:hidden">
+        <h2 class="flex justify-center text-center text-xl font-semibold text-primary text-pretty">
+            <?php echo $home_content['service_title'] ;  ?></h2>
+
         <div class="flex flex-wrap flex-col lg:flex-row lg:flex-nowrap">
             <?php 
                 $totalItems = count($home_content['services_repeater']);
@@ -412,13 +415,14 @@
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
     <div class="glide">
-        <h2 class="my-4 text-pretty font-extrabold text-4xl text-primary container mx-auto">
+        <h2
+            class="my-4 text-pretty font-extrabold text-2xl  lg:text-4xl text-primary container mx-auto flex text-center items-center justify-center">
             <?php echo $home_content['projects_section_title'] ?></h2>
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
                 <?php foreach($home_content['project_repeater'] as $one_project) { ?>
                 <li class="glide__slide">
-                    <div class="relative  rounded-lg shadow  overflow-hidden">
+                    <div class="relative  rounded-lg shadow  overflow-hidden px-3 lg:px-0">
                         <!-- Image Container with Text Overlay -->
                         <div class="relative">
                             <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image"
@@ -445,7 +449,7 @@
         <!-- Navigation Buttons -->
         <div class="glide__arrows" data-glide-el="controls">
             <button
-                class="glide__arrow glide__arrow--left left-[1rem] lg:left-[2rem] top-[63%] lg:top-[50%]  flex items-center gap-2 !bg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:!border-[#e0e0e0] hover:!bg-[#e0e0e0] hover:text-black transition-colors"
+                class="glide__arrow glide__arrow--left !left-[1rem] lg:!left-[2rem] !top-[63%] lg:!top-[50%]  flex items-center gap-2 !bg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:!border-[#e0e0e0] hover:!bg-[#e0e0e0] hover:text-black transition-colors"
                 data-glide-dir="<">
                 <svg class="w-4 h-4 rotate-180" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -453,7 +457,7 @@
                         fill="currentColor"></path>
                 </svg> </button>
             <button
-                class="glide__arrow glide__arrow--right right-[1rem] top-[63%] lg:top-[50%] lg:right-[2rem]  flex items-center !bg-[#fa4223] gap-2 !visiblebg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:!border-[#e0e0e0] hover:!bg-[#e0e0e0] hover:text-black transition-colors"
+                class="glide__arrow glide__arrow--right !right-[1rem] !top-[63%] lg:!top-[50%] lg:!right-[2rem]  flex items-center !bg-[#fa4223] gap-2 !visiblebg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:!border-[#e0e0e0] hover:!bg-[#e0e0e0] hover:text-black transition-colors"
                 data-glide-dir=">">
                 <svg class="w-4 h-4" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -535,19 +539,6 @@
 <h2> <?php echo $home_content['service_title'] ;  ?></h2>
 <!-- Services Array  -->
 
-
-
-
-<!-- Projects  -->
-<h2><?php echo $home_content['projects_section_title'] ?></h2>
-
-
-<!-- Projects Array -->
-<?php foreach($home_content['project_repeater'] as $one_project){ ?>
-<img src="<?php echo $one_project['project_image'] ?>" alt="">
-<h3><?= $one_project['project_title']?></h3>
-<h3><?= $one_project['project_subtitle']?></h3>
-<?php } ?>
 
 
 <!-- Last Section  -->
