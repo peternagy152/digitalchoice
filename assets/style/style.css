@@ -5,7 +5,7 @@
 
 @layer utilities {
   .bg-custom-gradient {
-    background: linear-gradient(90deg, #ff510a75, #e7d0aba1);
+    background: linear-gradient(90deg, #000000ed, #2a2928);
   }
   .icon {
     width: 12px !important;

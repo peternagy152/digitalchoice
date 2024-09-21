@@ -29,14 +29,14 @@
             <div class="flex items-center space-x-1">
                 <img src="<?php echo $header_content['logo']; ?>" alt="" class=" h-12 w-12">
                 <!-- Adjust the path and size of the logo as needed -->
-                <span class="text-black text-2xl font-bold">Digital</span> <span
+                <span class="text-white text-2xl font-bold">Digital</span> <span
                     class=" text-primary text-2xl  font-bold">Choice</span>
             </div>
 
             <!-- Navigation Links -->
-            <div class="flex space-x-6">
+            <div class="flex space-x-6 group">
                 <?php foreach ($header_content["main_menu"] as $one_item) { ?>
-                <a
+                <a class="text-white group-hover:underline decoration-white"
                     href="<?php echo $one_item['menu_item']['url']; ?>"><?php echo $one_item["menu_item"]['title']; ?></a>
                 <?php } ?>
 
