@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php $home_content = get_field("home_group") ;  ?>
 
-<div class="h-[90vh] flex items-center justify-center p-4 overflow-hidden">
+<body class="h-[90vh] flex items-center justify-center p-4 overflow-hidden">
     <div class="relative w-full h-[90vh] flex items-center justify-center bg-black bg-cover bg-center">
         <!-- Optional overlay for better text contrast -->
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -470,63 +470,7 @@
             </a>
         </div>
     </div>
-</div>
-
-<script>
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-
-    const size = Math.random() * 5 + 2;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-
-    const x = Math.random() * window.innerWidth;
-    // Set the particle to start 75vh from the bottom
-    const y = window.innerHeight * 0.75;
-    particle.style.left = `${x}px`;
-    particle.style.top = `${y}px`;
-
-    // Array of the specified colors
-    const colors = ['#e0e0e0', '#fa4223', '#ffffff'];
-    // Randomly select one of the colors
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    particle.style.backgroundColor = randomColor;
-
-    const duration = Math.random() * 3 + 2;
-    particle.style.animation = `float-up ${duration}s linear`;
-
-    document.getElementById('particles').appendChild(particle);
-
-    setTimeout(() => {
-        particle.remove();
-    }, duration * 1000);
-}
-
-setInterval(createParticle, 50);
-</script>
+                </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
-
-<script>
-// Initialize Glide.js
-new Glide('.glide', {
-    type: 'carousel',
-    perView: 4, // Number of slides to show at once
-    focusAt: 'center', // Focus the current slide
-    gap: 20, // Space between slides
-    breakpoints: {
-        1024: {
-            perView: 3
-        },
-        768: {
-            perView: 2
-        },
-        480: {
-            perView: 1
-        }
-    }
-}).mount();
-</script>
 <?php get_footer() ;  ?>

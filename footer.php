@@ -72,6 +72,8 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
 
 <?php wp_footer(); ?>
 </body>
