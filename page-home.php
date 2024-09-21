@@ -170,15 +170,20 @@
     </style>
 </head>
 
-<body class="bg-animated min-h-screen flex items-center justify-center p-4 overflow-hidden">
+<body class="bg-animated  h-[75vh] flex items-center justify-center p-4 overflow-hidden">
     <div id="particles"></div>
-    <div class="text-center z-10">
-        <h1 class="text-6xl font-bold mb-4 text-white neon-text glitch hover-3d" data-text="CYBERSPACE">CYBERSPACE</h1>
-        <p class="text-xl text-[#fa4223] mb-8">Enter the digital realm of infinite possibilities</p>
-        <button
-            class="bg-gradient-to-r from-[#fa4223] to-[#e0e0e0] text-white font-bold py-3 px-8 rounded-full  transition-all duration-300 hover:scale-110 inline-block">
-            <i class="fas fa-rocket mr-2"></i>Launch Now
-        </button>
+    <div class="relative w-full h-[75vh] flex items-center justify-center bg-cover bg-center"
+        style="background-image: url('https://demos.creative-tim.com/soft-ui-design-system/assets/img/curved-images/curved.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Optional overlay for better text contrast -->
+        <div class="text-center z-10 relative">
+            <h1 class="text-6xl font-bold mb-4 text-white neon-text glitch hover-3d" data-text="CYBERSPACE">CYBERSPACE
+            </h1>
+            <p class="text-xl text-[#fa4223] mb-8">Enter the digital realm of infinite possibilities</p>
+            <button
+                class="bg-gradient-to-r from-[#fa4223] to-[#e0e0e0] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-110 inline-block">
+                <i class="fas fa-rocket mr-2"></i>Launch Now
+            </button>
+        </div>
     </div>
 
     <script>
@@ -195,8 +200,11 @@
         particle.style.left = `${x}px`;
         particle.style.top = `${y}px`;
 
-        const hue = Math.random() * 360;
-        particle.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+        // Array of the specified colors
+        const colors = ['#e0e0e0', '#fa4223', '#ffffff'];
+        // Randomly select one of the colors
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.backgroundColor = randomColor;
 
         const duration = Math.random() * 3 + 2;
         particle.style.animation = `float-up ${duration}s linear`;
@@ -210,6 +218,7 @@
 
     setInterval(createParticle, 50);
     </script>
+
 </body>
 
 </html>
