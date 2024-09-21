@@ -510,7 +510,7 @@
         if (items[currentIndex].getAttribute('data-clone') === 'last') {
             carousel.style.transition = 'none';
             currentIndex = 1;
-            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            carousel.style.transform = `translateX(0px)`;
         } else if (items[currentIndex].getAttribute('data-clone') === 'first') {
             carousel.style.transition = 'none';
             currentIndex = items.length - 2;
