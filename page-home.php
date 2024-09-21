@@ -13,6 +13,10 @@
     <title>Extreme Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+
     <style>
     .bg-animated {
         background: linear-gradient(-45deg, #fa4223, #e0e0e0, #ffffff, #e0e0e0);
@@ -407,36 +411,36 @@
     </section>
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
-    <div class="carousel-container relative w-full container mx-auto overflow-hidden">
-        <!-- Carousel Items -->
-        <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
-            <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-            <div class="item min-w-[25%] p-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">
-                        <?= $one_project['project_title']; ?>
-                    </h2>
-                    <p class="text-sm text-gray-600">
-                        <?= $one_project['project_subtitle']; ?>
-                    </p>
-                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                </div>
-            </div>
-            <?php } ?>
+    <div class="glide">
+        <!-- Glide Slider Track -->
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <?php foreach($home_content['project_repeater'] as $one_project) { ?>
+                <li class="glide__slide">
+                    <div class="p-4">
+                        <div class="bg-white rounded-lg shadow p-4">
+                            <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image"
+                                class="w-full rounded">
+                            <h2 class="mt-2 text-lg font-bold">
+                                <?= $one_project['project_title']; ?>
+                            </h2>
+                            <p class="text-sm text-gray-600">
+                                <?= $one_project['project_subtitle']; ?>
+                            </p>
+                            <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+                        </div>
+                    </div>
+                </li>
+                <?php } ?>
+            </ul>
         </div>
 
         <!-- Navigation Buttons -->
-        <button id="prev"
-            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-            &#8592;
-        </button>
-        <button id="next"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
-            &#8594;
-        </button>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
+        </div>
     </div>
-
 
 
     <!-- ====== Products Carousel Section End -->
@@ -477,64 +481,27 @@
     </script>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
     <script>
-    const carousel = document.getElementById('carousel');
-    const nextButton = document.getElementById('next');
-    const prevButton = document.getElementById('prev');
-    let items = Array.from(carousel.children);
-    const itemWidth = items[0].offsetWidth;
-
-    let currentIndex = 1;
-
-    // Clone first and last items for loop effect
-    const firstClone = items[0].cloneNode(true);
-    const lastClone = items[items.length - 1].cloneNode(true);
-    carousel.appendChild(firstClone);
-    carousel.insertBefore(lastClone, items[0]);
-
-    // Update items after cloning
-    items = Array.from(carousel.children);
-
-    // Set unique IDs to clones for loop detection
-    firstClone.setAttribute('data-clone', 'first');
-    lastClone.setAttribute('data-clone', 'last');
-
-    // Function to update the carousel position
-    function updateCarousel() {
-        carousel.style.transition = 'transform 0.3s ease';
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }
-
-    // Reset position when transition ends to create seamless loop
-    carousel.addEventListener('transitionend', () => {
-        if (items[currentIndex].getAttribute('data-clone') === 'last') {
-            carousel.style.transition = 'none';
-            currentIndex = 1;
-            carousel.style.transform = `translateX(0px)`;
-        } else if (items[currentIndex].getAttribute('data-clone') === 'first') {
-            carousel.style.transition = 'none';
-            currentIndex = items.length - 2;
-            carousel.style.transform = `translateX(-${itemWidth*2}px)`;
+    // Initialize Glide.js
+    new Glide('.glide', {
+        type: 'carousel',
+        perView: 4, // Number of slides to show at once
+        focusAt: 'center', // Focus the current slide
+        gap: 20, // Space between slides
+        breakpoints: {
+            1024: {
+                perView: 3
+            },
+            768: {
+                perView: 2
+            },
+            480: {
+                perView: 1
+            }
         }
-    });
-
-    // Event listeners for navigation buttons
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < items.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-
-    // Initial update to start at the first actual item, not the clone
-    updateCarousel();
+    }).mount();
     </script>
 
 </body>
