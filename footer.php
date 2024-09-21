@@ -11,6 +11,12 @@
 
 ?>
 
+<?php 
+echo "Peter" ; 
+echo "<pre>" ;
+var_dump($header_content) ; 
+echo "</pre>";
+?>
 <footer id="colophon" class="site-footer">
     <div class="bg-black ">
         <div class="container px-6 py-8 mx-auto">
@@ -74,7 +80,6 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 <script href="<?php echo get_template_directory_uri() . '/assets/js/main.js'; ?>"></script>
-
 <?php wp_footer(); ?>
 
 </body>

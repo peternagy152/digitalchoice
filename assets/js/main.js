@@ -1,20 +1,6 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
+function toggleNav() {
+  const body = document.body;
+  body.classList.toggle('nav-open');
 }
 
-// when we click on hamburger icon its close
-console.log("kareem kate");
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
+console.log("Main Js Loaded") ; 

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
-
     <?php wp_head(); ?>
 
 </head>
@@ -118,10 +117,3 @@
             <?php } ?>
         </div>
     </nav>
-
-    <script>
-    function toggleNav() {
-        const body = document.body;
-        body.classList.toggle('nav-open');
-    }
-    </script>
