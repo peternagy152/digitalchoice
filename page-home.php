@@ -340,28 +340,21 @@
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
             <div class="sm:text-center lg:text-left">
                 <h1 class="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
-                    <span class="block xl:inline"><?= $about['header_title'] ?? 'Default Header Title' ?></span>
-                    <span
-                        class="block text-indigo-600 xl:inline"><?= $about['header_subtitle'] ?? 'Default Subtitle' ?></span>
+                    <?= $about['about_title'] ?>
                 </h1>
                 <p
                     class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                    <?= $about['header_description'] ?? 'Default description text.' ?>
+                    <?= $about['about_content'] ?>
                 </p>
                 <!-- Button Section -->
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div class="rounded-md shadow">
-                        <a href="<?= $about['primary_button']['url'] ?? '#' ?>"
+                        <a href="<?= $about['about_button']['url'] ?>"
                             class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
-                            <?= $about['primary_button']['title'] ?? 'Get started' ?>
+                            <?= $about['about_button']['title'] ?>
                         </a>
                     </div>
-                    <div class="mt-3 sm:mt-0 sm:ml-3">
-                        <a href="<?= $about['secondary_button']['url'] ?? '#' ?>"
-                            class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-800 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                            <?= $about['secondary_button']['title'] ?? 'Live demo' ?>
-                        </a>
-                    </div>
+
                 </div>
                 <!-- End of Button Section -->
             </div>
