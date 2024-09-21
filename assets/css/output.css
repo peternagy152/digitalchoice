@@ -628,6 +628,10 @@ video {
   bottom: 0px;
 }
 
+.top-\[-53px\] {
+  top: -53px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -642,6 +646,10 @@ video {
 
 .z-50 {
   z-index: 50;
+}
+
+.z-\[12\] {
+  z-index: 12;
 }
 
 .mx-auto {
@@ -1084,6 +1092,10 @@ h2 {
 .hover\:bg-slate-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-transparent:hover {
+  background-color: transparent;
 }
 
 .hover\:text-\[\#fa4223\]:hover {

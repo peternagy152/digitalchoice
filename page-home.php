@@ -187,7 +187,7 @@
     }
 
     .moving-waves>use {
-        animation: move-waves 25s cubic-bezier(.55, .5, .45, .5) infinite;
+        animation: move-waves 25s cubic-bezier(.55, .5, .45, 0) infinite;
     }
 
     .moving-waves>use:nth-child(1) {
@@ -233,7 +233,7 @@
 </head>
 
 <body class="h-[75vh] flex items-center justify-center p-4 overflow-hidden">
-    <div class="relative w-full h-[75vh] flex items-center justify-center bg-[#797878] bg-cover bg-center">
+    <div class="relative w-full h-[75vh] flex items-center justify-center bg-black bg-cover bg-center">
         <!-- Optional overlay for better text contrast -->
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
         <!-- Particles layer -->
@@ -244,11 +244,11 @@
             <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223] ">
                 <?php echo $home_content['hero_title']; ?>
             </h1>
-            <p class="mx-auto mt-9 max-w-2xl text-lg tracking-tight text-slate-700 sm:mt-6">
-            <h2> <?php echo $home_content['hero_desc']; ?></h2>
+            <p class="mx-auto mt-9 max-w-2xl text-lg tracking-tight text-white sm:mt-6">
+                <?php echo $home_content['hero_desc']; ?>
             </p>
             <a href="<?php echo $home_content['hero_button']['url'] ?>"
-                class="hidden lg:flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[40px] border-2 border-[#fa4223] hover:bg-[#e0e0e0] hover:text-black transition-colors">
+                class="hidden lg:flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[40px] border-2 border-[#fa4223] hover:bg-transparent hover:text-black transition-colors">
                 <span class="flex items-center justify-center w-4 h-4">
                     <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -269,7 +269,7 @@
     </div>
 
     <!-- Waves SVG positioned below the hero section -->
-    <div class="absolute w-full bottom-0 z-0">
+    <div class="relative w-full top-[-53px] bottom-0 z-[12]">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
