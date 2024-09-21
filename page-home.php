@@ -13,8 +13,11 @@
     <title>Extreme Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
 
 
     <style>
@@ -416,39 +419,28 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 
-    <!-- Glide Container -->
-    <div class="glide">
-        <!-- Glide Slider Track -->
-        <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-                <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-                <li class="glide__slide">
-                    <div class="p-4">
-                        <div class="bg-white rounded-lg shadow p-4">
-                            <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image"
-                                class="w-full rounded">
-                            <h2 class="mt-2 text-lg font-bold">
-                                <?= $one_project['project_title']; ?>
-                            </h2>
-                            <p class="text-sm text-gray-600">
-                                <?= $one_project['project_subtitle']; ?>
-                            </p>
-                            <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                        </div>
-                    </div>
-                </li>
-                <?php } ?>
-            </ul>
+    <!-- Your Slick Container -->
+    <div class="slick-container w-full container mx-auto overflow-hidden">
+        <!-- Slick Slider Items -->
+        <?php foreach($home_content['project_repeater'] as $one_project) { ?>
+        <div class="p-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
+                <h2 class="mt-2 text-lg font-bold">
+                    <?= $one_project['project_title']; ?>
+                </h2>
+                <p class="text-sm text-gray-600">
+                    <?= $one_project['project_subtitle']; ?>
+                </p>
+                <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+            </div>
         </div>
-
-        <!-- Navigation Buttons -->
-        <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
-        </div>
+        <?php } ?>
     </div>
     <!-- ====== Products Carousel Section End -->
 
@@ -489,28 +481,54 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
 
 
 
-    <!-- Include Glide.js JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- Include jQuery and Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <script>
-    // Initialize Glide.js
-    new Glide('.glide', {
-        type: 'carousel',
-        perView: 4, // Number of slides to show at once
-        focusAt: 'center', // Focus the current slide
-        gap: 20, // Space between slides
-        breakpoints: {
-            1024: {
-                perView: 3
-            },
-            768: {
-                perView: 2
-            },
-            480: {
-                perView: 1
-            }
+    $(document).ready(function() {
+        // Check if jQuery is loaded
+        if (typeof jQuery === 'undefined') {
+            console.error('jQuery is not loaded!');
+            return;
         }
-    }).mount();
+
+        // Check if Slick is loaded
+        if (typeof $.fn.slick === 'undefined') {
+            console.error('Slick Carousel is not loaded!');
+            return;
+        }
+
+        // Initialize Slick Carousel
+        $('.slick-container').slick({
+            infinite: true, // Enables infinite scrolling
+            slidesToShow: 4, // Number of slides to show at once
+            slidesToScroll: 1, // Number of slides to scroll at once
+            arrows: true, // Shows navigation arrows
+            prevArrow: '<button type="button" class="slick-prev">&#8592;</button>',
+            nextArrow: '<button type="button" class="slick-next">&#8594;</button>',
+            autoplay: false, // Set to true if you want autoplay
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    });
     </script>
 </body>
 
