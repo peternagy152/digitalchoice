@@ -232,8 +232,8 @@
     </style>
 </head>
 
-<body class="h-[75vh] flex items-center justify-center p-4 overflow-hidden">
-    <div class="relative w-full h-[75vh] flex items-center justify-center bg-black bg-cover bg-center">
+<body class="h-[90vh] flex items-center justify-center p-4 overflow-hidden">
+    <div class="relative w-full h-[90vh] flex items-center justify-center bg-black bg-cover bg-center">
         <!-- Optional overlay for better text contrast -->
         <div class="absolute inset-0 bg-black opacity-50 z-0"></div>
         <!-- Particles layer -->
@@ -242,7 +242,7 @@
         <div
             class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
             <!-- Text Content -->
-            <div class="flex flex-col items-start max-w-2xl text-left">
+            <div class="flex flex-col items-center lg:items-start max-w-2xl text-left">
                 <h1 class="max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223]">
                     <?php echo $home_content['hero_title']; ?>
                 </h1>
@@ -269,7 +269,7 @@
                 </a>
             </div>
             <!-- Image Section -->
-            <div class="flex-shrink-0 ml-8">
+            <div class="flex-shrink-0 ml-8 hidden lg:flex">
                 <img src="<?php echo $home_content['hero_image']; ?>" alt="Hero Image"
                     class="w-full h-auto max-w-sm object-cover">
             </div>
