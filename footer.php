@@ -26,14 +26,17 @@
 				?>
 
     </div><!-- .site-info -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    t>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 <script href="<?php echo get_template_directory_uri() . '/assets/js/main.js'; ?>"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+< /scrip
 <?php wp_footer(); ?>
 
-</body>
+    <
+    /body>
 
-</html>
+    <
+    /html>
