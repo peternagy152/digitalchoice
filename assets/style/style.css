@@ -14,7 +14,10 @@
   align-items: center;
   gap: 8px;
 }
-
+.menu_nav {
+  display: flex;
+  flex-direction: row;
+}
 .logo {
   height: 48px;
   width: 48px;
@@ -55,7 +58,7 @@
   width: 100%;
   position: relative;
   border-width: 1px;
-  border-color: #686767db;
+  border-color: #e0e0e0;
 }
 .menu {
   display: flex;
@@ -72,7 +75,7 @@
 }
 
 .menu-item:hover {
-  color: #ffc107;
+  color: #fa4223;
 }
 
 .close-button {
@@ -94,17 +97,17 @@
 }
 
 .close-button:hover {
-  background-color: #686767;
+  background-color: #e0e0e0;
 }
 
 .calendly-button {
   display: flex;
   align-items: center;
-  border: 2px solid #ffc107;
+  border: 2px solid #fa4223;
   border-radius: 40px;
   padding: 8px 16px;
   color: white;
-  background-color: #ffc107;
+  background-color: #fa4223;
   text-decoration: none;
   transition:
     background-color 0.3s,
@@ -115,7 +118,23 @@
   background-color: #e0e0e0;
   color: black;
 }
-
+.calendly_button_nav {
+  display: flex;
+  align-items: center;
+  border: 2px solid #fa4223;
+  border-radius: 40px;
+  padding: 8px 16px;
+  color: white;
+  background-color: #fa4223;
+  text-decoration: none;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.calendly_button_nav:hover {
+  background-color: #e0e0e0;
+  color: black;
+}
 .icon {
   display: flex;
   align-items: center;
@@ -154,5 +173,11 @@
     display: flex;
     transform: translateX(0);
     transition: transform 0.3s ease;
+  }
+  .menu_nav {
+    display: none;
+  }
+  .calendly_button_nav {
+    display: none;
   }
 }
