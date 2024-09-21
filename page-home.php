@@ -415,6 +415,12 @@
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
 
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <!-- Your Slick Container -->
     <div class="slick-container w-full container mx-auto overflow-hidden">
         <!-- Slick Slider Items -->
         <?php foreach($home_content['project_repeater'] as $one_project) { ?>
@@ -432,7 +438,6 @@
         </div>
         <?php } ?>
     </div>
-
     <!-- ====== Products Carousel Section End -->
 
 
@@ -472,10 +477,25 @@
 
 
 
-
+    <!-- Include jQuery and Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
     <script>
     $(document).ready(function() {
+        // Check if jQuery is loaded
+        if (typeof jQuery === 'undefined') {
+            console.error('jQuery is not loaded!');
+            return;
+        }
+
+        // Check if Slick is loaded
+        if (typeof $.fn.slick === 'undefined') {
+            console.error('Slick Carousel is not loaded!');
+            return;
+        }
+
+        // Initialize Slick Carousel
         $('.slick-container').slick({
             infinite: true, // Enables infinite scrolling
             slidesToShow: 4, // Number of slides to show at once
