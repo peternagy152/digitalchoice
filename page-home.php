@@ -416,7 +416,6 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
 
-    <!-- Include Glide.js CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
 
@@ -444,13 +443,13 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
                 <?php } ?>
             </ul>
         </div>
+
+        <!-- Navigation Buttons -->
         <div class="glide__arrows" data-glide-el="controls">
             <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
             <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
         </div>
     </div>
-
-
     <!-- ====== Products Carousel Section End -->
 
 
@@ -489,6 +488,8 @@ s['service_icon']; ?>" alt="Service Icon" class="mx-auto mb-3 max-w-[39px]">
     </script>
 
 
+
+    <!-- Include Glide.js JS -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
 
     <script>
