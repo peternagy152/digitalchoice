@@ -4,9 +4,7 @@
 
 <!--Hero Tailwind -->
 <!DOCTYPE html>
-<!DOCTYPE html>
-<!DOCTYPE html>
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -500,28 +498,30 @@
         }
 
         setInterval(createParticle, 50);
-        var swiper = new Swiper(".multiple-slide-carousel", {
-            loop: true,
-            slidesPerView: 3,
-            spaceBetween: 20,
-            navigation: {
-                nextEl: ".multiple-slide-carousel .swiper-button-next",
-                prevEl: ".multiple-slide-carousel .swiper-button-prev",
-            },
-            breakpoints: {
-                1920: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper(".multiple-slide-carousel", {
+                loop: true,
+                slidesPerView: 3,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                 },
-                1028: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
+                breakpoints: {
+                    1920: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1028: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    990: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    },
                 },
-                990: {
-                    slidesPerView: 1,
-                    spaceBetween: 0
-                }
-            }
+            });
         });
         </script>
 </body>
