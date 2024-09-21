@@ -278,26 +278,27 @@
 
     </div>
     <div class=" relative  top-[-66px] bottom-0 w-full">
-        <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute container mx-auto">
-            <div class="flex flex-wrap">
-                <?php foreach($home_content['services_repeater'] as $one_services): ?>
-                <div class="w-full md:w-1/3 p-4 relative">
-                    <div class="p-3 text-center bg-white rounded-lg shadow-lg">
-                        <!-- Display Service Icon -->
-                        <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
-                            class="mx-auto mb-3 max-w-[50px]">
-                        <!-- Display Service Title -->
-                        <h1 class="text-2xl font-semibold text-primary mb-2">
-                            <?php echo $one_services['service_title']; ?></h1>
-                        <!-- Display Service Description -->
-                        <p class="text-sm text-gray-600"><?php echo $one_services['service_desc']; ?></p>
+        <div class=" max-w-md mx-auto">
+            <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute container mx-auto">
+                <div class="flex flex-wrap">
+                    <?php foreach($home_content['services_repeater'] as $one_services): ?>
+                    <div class="w-full md:w-1/3 p-4 relative">
+                        <div class="p-3 text-center  inset-0 inset-x-auto">
+                            <!-- Display Service Icon -->
+                            <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
+                                class="mx-auto mb-3 max-w-[50px]">
+                            <!-- Display Service Title -->
+                            <h1 class="text-2xl font-semibold text-primary mb-2">
+                                <?php echo $one_services['service_title']; ?></h1>
+                            <!-- Display Service Description -->
+                            <p class="text-sm text-gray-600"><?php echo $one_services['service_desc']; ?></p>
+                        </div>
+                        <hr class="absolute right-0 top-0 h-full border-r border-gray-200 hidden md:block">
                     </div>
-                    <hr class="absolute right-0 top-0 h-full border-r border-gray-200 hidden md:block">
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
             </div>
         </div>
-
         <!-- Waves SVG positioned below the hero section -->
         <div class="relative w-full z-[70]">
 
