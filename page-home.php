@@ -13,8 +13,12 @@
     <title>Extreme Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+
 
     <style>
     .bg-animated {
@@ -411,30 +415,23 @@
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
 
-    <div class="swiper-container relative w-full container mx-auto overflow-hidden">
-        <!-- Swiper Wrapper -->
-        <div class="swiper-wrapper">
-            <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-            <div class="swiper-slide p-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
-                    <h2 class="mt-2 text-lg font-bold">
-                        <?= $one_project['project_title']; ?>
-                    </h2>
-                    <p class="text-sm text-gray-600">
-                        <?= $one_project['project_subtitle']; ?>
-                    </p>
-                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
-                </div>
+    <div class="slick-container w-full container mx-auto overflow-hidden">
+        <!-- Slick Slider Items -->
+        <?php foreach($home_content['project_repeater'] as $one_project) { ?>
+        <div class="p-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
+                <h2 class="mt-2 text-lg font-bold">
+                    <?= $one_project['project_title']; ?>
+                </h2>
+                <p class="text-sm text-gray-600">
+                    <?= $one_project['project_subtitle']; ?>
+                </p>
+                <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
             </div>
-            <?php } ?>
         </div>
-
-        <!-- Navigation Buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <?php } ?>
     </div>
-
 
     <!-- ====== Products Carousel Section End -->
 
@@ -475,16 +472,39 @@
 
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
     <script>
-    // Initialize Swiper
-    const swiper = new Swiper('.swiper-container', {
-        loop: true, // Enable loop mode
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        slidesPerView: 4, // Adjust as needed
-        spaceBetween: 20, // Adjust spacing between slides
+    $(document).ready(function() {
+        $('.slick-container').slick({
+            infinite: true, // Enables infinite scrolling
+            slidesToShow: 4, // Number of slides to show at once
+            slidesToScroll: 1, // Number of slides to scroll at once
+            arrows: true, // Shows navigation arrows
+            prevArrow: '<button type="button" class="slick-prev">&#8592;</button>',
+            nextArrow: '<button type="button" class="slick-next">&#8594;</button>',
+            autoplay: false, // Set to true if you want autoplay
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
     });
     </script>
 </body>
