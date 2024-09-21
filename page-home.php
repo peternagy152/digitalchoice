@@ -471,7 +471,7 @@
 
     <!-- ====== FAQS Section End -->
 
-    <div class="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen">
+    <div class="max-w-screen-xl mx-auto px-5 bg-white min-h-sceen my-4">
         <div class="flex flex-col items-center">
             <h2 class="font-bold text-5xl mt-5 tracking-tight">
                 FAQ
@@ -668,8 +668,8 @@
     <div class=" w-full  bg-black ">
 
         <div
-            class="container mx-auto py-8 flex flex-col gap-y-3 gap-x-3 px-4 w-full justify-center items-center text-center ">
-            <h3 class="text-secondary md:text-[40px] text-xl  font-normal text-pretty ">
+            class="container mx-auto py-[6rem]  flex flex-col gap-y-3 gap-x-3 px-4 w-full justify-center items-center text-center ">
+            <h3 class="text-primary md:text-[40px] text-xl  font-normal text-pretty ">
                 <?= $home_content['last_subtitle'] ?></h3>
 
             <h3 class="text-white md:text-[96px] text-[36px] text-pretty font-bold "><?= $home_content['last_title'] ?>
@@ -768,8 +768,5 @@
 
 
 <!-- Last Section  -->
-<h3><?= $home_content['last_title'] ?></h3>
-<h3><?= $home_content['last_subtitle'] ?></h3>
-<a href="<?php echo $home_content['last_button']['url'] ?>"> <?php echo $home_content['last_button']['title'] ;  ?></a>
 
 <?php get_footer(); ?>
