@@ -24,9 +24,9 @@
 <body class="font-saira">
     <?php $header_content = get_field("header_group", "options"); ?>
 
-    <nav class="container mx-auto">
+    <nav class="">
         <div
-            class="fixed w-full flex container my-4 z-50 items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md rounded-[40px]">
+            class="fixed w-full flex container  z-50 items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md rounded-[40px]">
             <!-- Logo and Website Name -->
             <div class="flex items-center gap-2">
                 <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-10 w-10">
@@ -42,7 +42,7 @@
             </div>
             <!-- Calendly Button -->
             <a href="/calendy"
-                class="hidden lg:flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[40px] border-2 border-[#fa4223] hover:bg-[#e0e0e0] hover:border-[#e0e0e0]  hover:text-black transition-colors">
+                class="hidden lg:flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:bg-[#e0e0e0] hover:border-[#e0e0e0]  hover:text-black transition-colors">
                 <span class="flex items-center justify-center w-4 h-4">
                     <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -86,7 +86,7 @@
 
                 <!-- Calendly Button -->
                 <a href="/calendy"
-                    class="flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[40px] border-2 border-[#fa4223] hover:bg-[#e0e0e0] hover:text-black transition-colors">
+                    class="flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:bg-[#e0e0e0] hover:text-black transition-colors">
                     <span class="flex items-center justify-center w-4 h-4">
                         <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
