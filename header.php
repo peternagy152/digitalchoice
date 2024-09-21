@@ -153,7 +153,7 @@
                                     fill="currentColor"></path>
                             </svg>
                         </span>
-                        <span class="calendly-text">Calendly</span>
+                        <span class="calendly-text capitalize">Schedule A meeting</span>
                         <span class="flex items-center justify-center w-4 h-4">
                             <svg class="w-full h-full" viewBox="0 0 26 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
