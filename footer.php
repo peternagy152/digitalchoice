@@ -10,10 +10,10 @@
  */
 
 ?>
-
 <?php 
 echo "Peter" ; 
 echo "<pre>" ;
+global $header_content ; 
 var_dump($header_content) ; 
 echo "</pre>";
 ?>
