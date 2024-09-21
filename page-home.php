@@ -417,13 +417,14 @@
             <ul class="glide__slides">
                 <?php foreach($home_content['project_repeater'] as $one_project) { ?>
                 <li class="glide__slide">
-                    <div class="relative bg-white rounded-lg shadow p-4 overflow-hidden">
+                    <div class="relative  rounded-lg shadow  overflow-hidden">
                         <!-- Image Container with Text Overlay -->
                         <div class="relative">
                             <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image"
                                 class="w-full rounded">
                             <!-- Text Overlay Positioned at the Bottom -->
-                            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-4 text-white">
+                            <div
+                                class="absolute bottom-0 left-0  right-0 text-center flex items-center w-full bg-black bg-opacity-20 p-4 text-white">
                                 <h2 class="text-lg font-bold">
                                     <?= $one_project['project_title']; ?>
                                 </h2>
@@ -432,8 +433,7 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Button Below the Image -->
-                        <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+
                     </div>
 
                 </li>
