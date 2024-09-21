@@ -17,7 +17,7 @@
 </head>
 
 <body class="font-saira">
-    <?php global $header_content = get_field("header_group", "options"); ?>
+    <?php $header_content = get_field("header_group", "options"); ?>
 
     <nav class="w-full fixed bg-black z-[9999]">
         <div
