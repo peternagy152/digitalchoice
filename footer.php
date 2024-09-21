@@ -10,13 +10,7 @@
  */
 
 ?>
-<?php 
-echo "Peter" ; 
-echo "<pre>" ;
-global $header_content ; 
-var_dump($header_content) ; 
-echo "</pre>";
-?>
+<?php $header_content = get_field("header_group", "options");  ?>
 <footer id="colophon" class="site-footer">
     <div class="bg-black ">
         <div class="container px-6 py-8 mx-auto">
@@ -77,8 +71,8 @@ echo "</pre>";
             </div>
         </div>
     </div>
-</footer><!-- #colophon -->
-</div><!-- #page -->
+</footer>
+</div>
 <script href="<?php echo get_template_directory_uri() . '/assets/js/main.js'; ?>"></script>
 <?php wp_footer(); ?>
 
