@@ -417,19 +417,25 @@
             <ul class="glide__slides">
                 <?php foreach($home_content['project_repeater'] as $one_project) { ?>
                 <li class="glide__slide">
-                    <div class="p-4">
-                        <div class="bg-white rounded-lg shadow p-4">
+                    <div class="relative bg-white rounded-lg shadow p-4 overflow-hidden">
+                        <!-- Image Container with Text Overlay -->
+                        <div class="relative">
                             <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image"
                                 class="w-full rounded">
-                            <h2 class="mt-2 text-lg font-bold">
-                                <?= $one_project['project_title']; ?>
-                            </h2>
-                            <p class="text-sm text-gray-600">
-                                <?= $one_project['project_subtitle']; ?>
-                            </p>
-                            <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+                            <!-- Text Overlay Positioned at the Bottom -->
+                            <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 p-4 text-white">
+                                <h2 class="text-lg font-bold">
+                                    <?= $one_project['project_title']; ?>
+                                </h2>
+                                <p class="text-sm">
+                                    <?= $one_project['project_subtitle']; ?>
+                                </p>
+                            </div>
                         </div>
+                        <!-- Button Below the Image -->
+                        <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
                     </div>
+
                 </li>
                 <?php } ?>
             </ul>
@@ -438,7 +444,7 @@
         <!-- Navigation Buttons -->
         <div class="glide__arrows" data-glide-el="controls">
             <button
-                class="glide__arrow glide__arrow--left  flex items-center gap-2 !bg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
+                class="glide__arrow glide__arrow--left  flex items-center gap-2 !bg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:!border-[#e0e0e0] hover:!bg-[#e0e0e0] hover:text-black transition-colors"
                 data-glide-dir="<">
                 <svg class="w-4 h-4 rotate-180" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -446,7 +452,7 @@
                         fill="currentColor"></path>
                 </svg> </button>
             <button
-                class="glide__arrow glide__arrow--right  flex items-center !bg-[#fa4223] gap-2 !visiblebg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
+                class="glide__arrow glide__arrow--right  flex items-center !bg-[#fa4223] gap-2 !visiblebg-[#fa4223] text-white px-4 py-2 !rounded-[40px] !border-2 !border-[#fa4223] hover:!border-[#e0e0e0] hover:!bg-[#e0e0e0] hover:text-black transition-colors"
                 data-glide-dir=">">
                 <svg class="w-4 h-4" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
