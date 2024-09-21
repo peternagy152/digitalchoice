@@ -1182,6 +1182,10 @@ h2 {
   font-family: "Saira", sans-serif;
 }
 
+.last\:border-0:last-child {
+  border-width: 0px;
+}
+
 .hover\:border-\[\#e0e0e0\]:hover {
   --tw-border-opacity: 1;
   border-color: rgb(224 224 224 / var(--tw-border-opacity));

@@ -278,27 +278,31 @@
 
     </div>
     <div class=" relative  top-[-66px] bottom-0 w-full">
-        <div class=" max-w-2xl  flex justify-center mx-auto">
-            <div class=" mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] ">
+        <div class="flex justify-center mx-auto">
+            <div class="mt-[-2.5rem] py-3 rounded-xl bg-white shadow-xl backdrop-blur-md absolute z-[80] w-full">
                 <div class="flex flex-wrap lg:flex-nowrap">
                     <?php foreach($home_content['services_repeater'] as $one_services): ?>
                     <div class="w-full min-w-[1/3] p-4 relative">
-                        <div class="p-3 text-center  inset-0 inset-x-auto">
+                        <div class="p-3 text-center inset-0 inset-x-auto">
                             <!-- Display Service Icon -->
                             <img src="<?php echo $one_services['service_icon']; ?>" alt="Service Icon"
                                 class="mx-auto mb-3 max-w-[39px]">
                             <!-- Display Service Title -->
-                            <h1 class=" text-base  font-semibold text-primary mb-2  text-nowrap ">
-                                <?php echo $one_services['service_title']; ?></h1>
+                            <h1 class="text-base font-semibold text-primary mb-2 text-nowrap">
+                                <?php echo $one_services['service_title']; ?>
+                            </h1>
                             <!-- Display Service Description -->
                             <p class="text-sm text-gray-600"><?php echo $one_services['service_desc']; ?></p>
                         </div>
-                        <hr class="absolute right-0 top-0 h-full border-r border-gray-200 hidden md:block">
+                        <!-- Add border except on the last item -->
+                        <hr
+                            class="absolute right-0 top-0 h-full border-r border-gray-200 hidden md:block last:border-0">
                     </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         </div>
+
         <!-- Waves SVG positioned below the hero section -->
         <div class="relative w-full z-[70]">
 
