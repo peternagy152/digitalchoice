@@ -361,15 +361,56 @@
     </div>
     <!-- about us  -->
 
-    <!-- Include Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <section class="sm:mt-6 lg:mt-8 mt-12 container mx-auto px-4 sm:px-6 lg:px-8">
 
+        <div
+            class="my-10  px-4 sm:mt-12 sm:px-6   lg:px-4 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col-reverse lg:flex-row justify-between">
+            <!-- Loop Through Dynamic Content -->
+            <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
+            <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">
+                <h1 class="text-lg tracking-tight font-extrabold text-primary  md:text-5xl text-pretty">
+                    <?= $about['about_title'] ?>
+                </h1>
+                <p
+                    class="mt-3 text-base text-gray-500 sm:mt-5  sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 text-pretty">
+                    <?= $about['about_content'] ?>
+                </p>
+                <!-- Button Section -->
+                <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                    <a href="<?= $about['about_button']['url'] ?>"
+                        class="mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
 
+                        <span class="calendly-text"><?= $about['about_button']['title'] ?></span>
+                        <span class="flex items-center justify-center w-4 h-4">
+                            <svg class="w-full h-full" viewBox="0 0 26 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+                <!-- End of Button Section -->
+            </div>
+
+            <!-- Dynamic Image and Content Section -->
+            <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
+                <img class="h-56 w-full object-fill sm:h-72 md:h-96 lg:w-[81%] lg:h-full"
+                    src="<?= $about['about_image'] ?>" alt="<?= $about['about_title'] ?>">
+
+            </div>
+            <?php } ?>
+            <!-- End of Dynamic Content Section -->
+        </div>
+
+    </section>
     <!-- Projects  -->
+    <!-- ====== Products Carousel Section Start -->
     <div class="carousel-container relative w-full max-w-4xl mx-auto overflow-hidden">
         <!-- Carousel Items -->
         <div id="carousel" class="flex transition-transform duration-300">
-            <div class="item min-w-full p-4">
+            <div class="item min-w-1/4 p-4">
                 <div class="bg-white rounded-lg shadow p-4">
                     <img src="https://via.placeholder.com/150" alt="Item 1" class="w-full rounded">
                     <h2 class="mt-2 text-lg font-bold">Item 1</h2>
@@ -377,7 +418,7 @@
                     <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
                 </div>
             </div>
-            <div class="item min-w-full p-4">
+            <div class="item min-w-1/4 p-4">
                 <div class="bg-white rounded-lg shadow p-4">
                     <img src="https://via.placeholder.com/150" alt="Item 2" class="w-full rounded">
                     <h2 class="mt-2 text-lg font-bold">Item 2</h2>
@@ -385,7 +426,31 @@
                     <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
                 </div>
             </div>
-            <!-- Add more items as needed -->
+            <div class="item min-w-1/4 p-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="https://via.placeholder.com/150" alt="Item 3" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">Item 3</h2>
+                    <p class="text-sm text-gray-600">Description of Item 3</p>
+                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+                </div>
+            </div>
+            <div class="item min-w-1/4 p-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="https://via.placeholder.com/150" alt="Item 4" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">Item 4</h2>
+                    <p class="text-sm text-gray-600">Description of Item 4</p>
+                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Duplicated items to create loop effect -->
+            <div class="item min-w-1/4 p-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <img src="https://via.placeholder.com/150" alt="Item 5" class="w-full rounded">
+                    <h2 class="mt-2 text-lg font-bold">Item 5</h2>
+                    <p class="text-sm text-gray-600">Description of Item 5</p>
+                    <button class="mt-2 bg-blue-500 text-white py-1 px-4 rounded">Add to Cart</button>
+                </div>
+            </div>
         </div>
 
         <!-- Navigation Buttons -->
@@ -399,35 +464,10 @@
         </button>
     </div>
 
+
     <!-- ====== Products Carousel Section End -->
-    <script>
-    const carousel = document.getElementById('carousel');
-    const nextButton = document.getElementById('next');
-    const prevButton = document.getElementById('prev');
 
-    let currentIndex = 0;
 
-    // Function to update the carousel position
-    function updateCarousel() {
-        const itemWidth = carousel.children[0].offsetWidth;
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }
-
-    // Event listeners for navigation buttons
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < carousel.children.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        }
-    });
-
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
-    });
-    </script>
     <script>
     function createParticle() {
         const particle = document.createElement('div');
@@ -461,6 +501,60 @@
 
     setInterval(createParticle, 50);
     </script>
+
+    <script>
+    const carousel = document.getElementById('carousel');
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
+    const items = Array.from(carousel.children);
+    const itemWidth = items[0].offsetWidth;
+
+    let currentIndex = 0;
+
+    // Function to update the carousel position
+    function updateCarousel() {
+        carousel.style.transition = 'transform 0.3s ease';
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+    // Clone first and last items for loop effect
+    const firstClone = items[0].cloneNode(true);
+    const lastClone = items[items.length - 1].cloneNode(true);
+    carousel.appendChild(firstClone);
+    carousel.insertBefore(lastClone, items[0]);
+
+    // Reset position when transition ends to create seamless loop
+    carousel.addEventListener('transitionend', () => {
+        if (currentIndex === items.length) {
+            carousel.style.transition = 'none';
+            currentIndex = 0;
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        } else if (currentIndex === -1) {
+            carousel.style.transition = 'none';
+            currentIndex = items.length - 1;
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+    });
+
+    // Event listeners for navigation buttons
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < items.length) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > -1) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    // Initial update
+    updateCarousel();
+    </script>
+
 </body>
 
 </html>
