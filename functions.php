@@ -32,6 +32,11 @@ function enqueue_tailwind_styles() {
     wp_enqueue_style('tailwindcss', get_template_directory_uri() . '/assets/css/output.css', array(), '1.0', 'all');
 }
 add_action('wp_enqueue_scripts', 'enqueue_tailwind_styles');
+function digitalchoice_enqueue_styles() {
+    // Enqueue the main stylesheet
+    wp_enqueue_style('digitalchoice-main-style', get_template_directory_uri() . '/assets/css/output.css');
+}
+add_action('wp_enqueue_scripts', 'digitalchoice_enqueue_styles');
 
 function Faqs() {
 
