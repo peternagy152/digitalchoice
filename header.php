@@ -33,8 +33,8 @@
     .nav-content {
         background-color: black;
         padding: 20px;
-        width: 80%;
-        max-width: 82vw;
+        width: 85%;
+        max-width: 85vw;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -136,8 +136,6 @@
                     </div>
                     <div class="border border-[#e0e0e0]"></div>
 
-                    <!-- Close Button -->
-                    <button class="close-button" onclick="toggleNav()">X</button>
 
                     <!-- Calendly Button -->
                     <a href="/calendy"
@@ -161,6 +159,9 @@
                         </span>
                     </a>
                 </div>
+                <!-- Close Button -->
+
+                <button class="close-button" onclick="toggleNav()">X</button>
 
                 <!-- Semi-Transparent Overlay -->
                 <div class="overlay"></div>
