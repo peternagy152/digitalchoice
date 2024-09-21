@@ -361,50 +361,70 @@
     </div>
     <!-- about us  -->
 
-    <section class="sm:mt-6 lg:mt-8 mt-12 container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        <div
-            class="my-10  px-4 sm:mt-12 sm:px-6   lg:px-4 flex gap-3 lg gap-x-[7.75rem] lg:flex-justify lg:flex flex-col-reverse lg:flex-row justify-between">
-            <!-- Loop Through Dynamic Content -->
-            <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
-            <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">
-                <h1 class="text-lg tracking-tight font-extrabold text-primary  md:text-5xl text-pretty">
-                    <?= $about['about_title'] ?>
-                </h1>
-                <p
-                    class="mt-3 text-base text-gray-500 sm:mt-5  sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 text-pretty">
-                    <?= $about['about_content'] ?>
-                </p>
-                <!-- Button Section -->
-                <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                    <a href="<?= $about['about_button']['url'] ?>"
-                        class="mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors">
-
-                        <span class="calendly-text"><?= $about['about_button']['title'] ?></span>
-                        <span class="flex items-center justify-center w-4 h-4">
-                            <svg class="w-full h-full" viewBox="0 0 26 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
-                                    fill="currentColor"></path>
-                            </svg>
+    <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
+        <div class="container mx-auto">
+            <div class="-mx-4 flex flex-wrap">
+                <div class="w-full px-4">
+                    <div class="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-[70px]">
+                        <span class="mb-2 block text-lg font-semibold text-primary">
+                            Most Popular Projects
                         </span>
-                    </a>
+                        <h2
+                            class="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:leading-[1.2] md:text-[40px]">
+                            Best Projects
+                        </h2>
+                        <p class="text-base text-body-color dark:text-dark-6">
+                            There are many variations of passages of Lorem Ipsum available but the majority have
+                            suffered
+                            alteration in some form.
+                        </p>
+                    </div>
                 </div>
-                <!-- End of Button Section -->
             </div>
 
-            <!-- Dynamic Image and Content Section -->
-            <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                <img class="h-56 w-full object-fill sm:h-72 md:h-96 lg:w-[81%] lg:h-full"
-                    src="<?= $about['about_image'] ?>" alt="<?= $about['about_title'] ?>">
-
+            <!-- Alpine.js Slider Setup -->
+            <div x-data="{ activeSlide: 0 }">
+                <div class="relative flex justify-center">
+                    <div class="relative w-full">
+                        <!-- Carousel Container -->
+                        <div class="flex mx-auto h-auto w-full max-w-[960px] overflow-hidden transition-all"
+                            x-ref="carousel">
+                            <!-- PHP Loop for Projects -->
+                            <?php foreach($home_content['project_repeater'] as $one_project) { ?>
+                            <div class="min-w-[300px] px-4">
+                                <div class="relative mb-5 overflow-hidden rounded-md">
+                                    <img src="<?php echo $one_project['project_image']; ?>" alt="project"
+                                        class="w-full" />
+                                    <h2 class="absolute inset-0 flex items-center justify-center text-white text-2xl">
+                                        Kareem</h2>
+                                </div>
+                                <h3 class="text-center"><?= $one_project['project_title']; ?></h3>
+                                <h4 class="text-center"><?= $one_project['project_subtitle']; ?></h4>
+                            </div>
+                            <?php } ?>
+                        </div>
+                        <!-- Navigation Buttons -->
+                        <div class="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 justify-between px-4">
+                            <button
+                                class="h-10 w-10 rounded-full bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white"
+                                @click="$refs.carousel.scrollLeft -= $refs.carousel.offsetWidth / <?= count($home_content['project_repeater']); ?>; activeSlide = activeSlide === 0 ? <?= count($home_content['project_repeater']) - 1; ?> : activeSlide - 1;">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button
+                                class="h-10 w-10 rounded-full bg-white text-dark shadow-md transition-all hover:bg-primary hover:text-white"
+                                @click="$refs.carousel.scrollLeft += $refs.carousel.offsetWidth / <?= count($home_content['project_repeater']); ?>; activeSlide = activeSlide === <?= count($home_content['project_repeater']) - 1; ?> ? 0 : activeSlide + 1;">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <?php } ?>
-            <!-- End of Dynamic Content Section -->
         </div>
-
     </section>
+
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
     <section class="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
@@ -435,7 +455,7 @@
                             <template x-for="(slide, index) in slides" :key="index">
                                 <div class="min-w-[300px] px-4">
                                     <div class="relative mb-5 overflow-hidden rounded-md">
-                                        <img :src="'https://cdn.tailgrids.com/1.0/assets/images/ecommerce/products/product-carousel-01/image-0' + (index + 1) + '.jpg'"
+                                        <img :src="'https://img.freepik.com/free-psd/prom-party-landing-page-template_23-2148931868.jpg?size=626&ext=jpg&ga=GA1.1.537945044.1726910375&semt=ais_hybrid' + (index + 1) + '.jpg'"
                                             alt="product" class="w-full" />
                                         <h2
                                             class="absolute inset-0 flex items-center justify-center text-white text-2xl">
