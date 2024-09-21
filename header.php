@@ -23,6 +23,11 @@
     <nav class="w-full fixed bg-black z-[9999]">
         <div
             class="w-full flex container mx-auto items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md">
+             <!-- Logo and Website Name -->
+             <div class="flex items-center gap-2">
+                <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-10 w-10">
+                <span class="text-white font-bold text-[22px]">Digital <span class="text-[#fa4223]">Choice</span></span>
+            </div>
             <?php if(wp_is_mobile()){ ?>
             <!-- Mobile Menu -->
             <div class="nav-container">
@@ -81,11 +86,7 @@
                 <span class="bg-white h-0.5 w-[15px]"></span>
             </div>
             <?php }else{ ?>
-            <!-- Logo and Website Name -->
-            <div class="flex items-center gap-2">
-                <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-10 w-10">
-                <span class="text-white font-bold text-[22px]">Digital <span class="text-[#fa4223]">Choice</span></span>
-            </div>
+           
             <div class="hidden lg:flex gap-4">
                 <?php foreach ($header_content["main_menu"] as $one_item) { ?>
                 <a class="text-white text-[18px] hover:text-[#fa4223] transition-colors"
