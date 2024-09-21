@@ -1203,19 +1203,6 @@ h2 {
   font-family: "Saira", sans-serif;
 }
 
-.swiper-wrapper {
-  width: 100%;
-  height: -moz-max-content !important;
-  height: max-content !important;
-  padding-bottom: 64px !important;
-  transition-timing-function: linear !important;
-  position: relative;
-}
-
-.swiper-pagination-bullet {
-  background: #4f46e5;
-}
-
 .hover\:border-\[\#e0e0e0\]:hover {
   --tw-border-opacity: 1;
   border-color: rgb(224 224 224 / var(--tw-border-opacity));
