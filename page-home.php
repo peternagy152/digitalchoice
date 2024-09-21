@@ -482,16 +482,10 @@
     const carousel = document.getElementById('carousel');
     const nextButton = document.getElementById('next');
     const prevButton = document.getElementById('prev');
-    const items = Array.from(carousel.children);
+    let items = Array.from(carousel.children);
     const itemWidth = items[0].offsetWidth;
 
-    let currentIndex = 0;
-
-    // Function to update the carousel position
-    function updateCarousel() {
-        carousel.style.transition = 'transform 0.3s ease';
-        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-    }
+    let currentIndex = 1;
 
     // Clone first and last items for loop effect
     const firstClone = items[0].cloneNode(true);
@@ -499,37 +493,47 @@
     carousel.appendChild(firstClone);
     carousel.insertBefore(lastClone, items[0]);
 
+    // Update items after cloning
+    items = Array.from(carousel.children);
+
+    // Function to update the carousel position
+    function updateCarousel() {
+        carousel.style.transition = 'transform 0.3s ease';
+        carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
     // Reset position when transition ends to create seamless loop
     carousel.addEventListener('transitionend', () => {
-        if (currentIndex === items.length) {
+        if (items[currentIndex].id === firstClone.id) {
             carousel.style.transition = 'none';
-            currentIndex = 0;
+            currentIndex = 1;
             carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        } else if (currentIndex === lastClone) {
+        } else if (items[currentIndex].id === lastClone.id) {
             carousel.style.transition = 'none';
-            currentIndex = items.length - 1;
+            currentIndex = items.length - 2;
             carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
         }
     });
 
     // Event listeners for navigation buttons
     nextButton.addEventListener('click', () => {
-        if (currentIndex < items.length) {
+        if (currentIndex < items.length - 1) {
             currentIndex++;
             updateCarousel();
         }
     });
 
     prevButton.addEventListener('click', () => {
-        if (currentIndex > -1) {
+        if (currentIndex > 0) {
             currentIndex--;
             updateCarousel();
         }
     });
 
-    // Initial update
+    // Initial update to start at the first actual item, not the clone
     updateCarousel();
     </script>
+
 
 </body>
 
