@@ -47,14 +47,17 @@
             <div class="flex gap-x-2">
                 <a href="/calendy"
                     class="flex border-[2px] rounded-[10px] items-center  border-primary text-white bg-primary   xl:px-5 px-4 py-[15px]  text-base  gap-2.5 hover:text-black hover:bg-gray-500  transition">
-                    <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M17.091 0.800049V3.85547H6.90959V0.800049H3.85417V3.85547H0.800781V23.2001H23.1987V3.85547H20.1454V0.800049H17.091ZM3.85417 8.94513H20.1443V6.90886H3.85417V8.94513ZM3.85417 20.1456H20.1443V11.9995H3.85417V20.1456Z"
-                            fill="CurrentColor"></path>
-                    </svg>
+                    <span class="w-6 h-6 flex items-center">
+                        <svg class="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M17.091 0.800049V3.85547H6.90959V0.800049H3.85417V3.85547H0.800781V23.2001H23.1987V3.85547H20.1454V0.800049H17.091ZM3.85417 8.94513H20.1443V6.90886H3.85417V8.94513ZM3.85417 20.1456H20.1443V11.9995H3.85417V20.1456Z"
+                                fill="CurrentColor"></path>
+                        </svg>
+                    </span>
 
-                    Calendly
-                    <span class="w-6 h-6"><svg class="w-full h-full" viewBox="0 0 26 24" fill="none"
+
+                    <span> Calendly </span>
+                    <span class="w-6 h-6 flex items-center"><svg class="w-full h-full" viewBox="0 0 26 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M25.5996 12L16.0645 0.800049H12.6591L20.832 10.6H0.399609V12V13.4H20.832L12.6591 23.2001H16.0645L25.5996 12Z"
