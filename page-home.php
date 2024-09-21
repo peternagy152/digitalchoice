@@ -665,14 +665,14 @@
 
     <!-- ====== Last Section -->
 
-    <div class=" w-full  bg-black ">
+    <div class=" w-full  bg-secondary ">
 
         <div
             class="container mx-auto py-[6rem]  flex flex-col gap-y-3 gap-x-3 px-4 w-full justify-center items-center text-center ">
             <h3 class="text-primary md:text-[40px] text-xl  font-normal text-pretty ">
                 <?= $home_content['last_subtitle'] ?></h3>
 
-            <h3 class="text-white md:text-[96px] text-[36px] text-pretty font-bold "><?= $home_content['last_title'] ?>
+            <h3 class="text-black md:text-[96px] text-[36px] text-pretty font-bold "><?= $home_content['last_title'] ?>
             </h3>
             <a href="<?php echo $home_content['last_button']['url'] ?>">
                 <?php echo $home_content['last_button']['title'] ;  ?></a>
