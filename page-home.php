@@ -13,6 +13,9 @@
     <title>Extreme Hero Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <style>
     .bg-animated {
         background: linear-gradient(-45deg, #fa4223, #e0e0e0, #ffffff, #e0e0e0);
