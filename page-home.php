@@ -437,12 +437,18 @@
 
         <!-- Navigation Buttons -->
         <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">&#8592;</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">&#8594;</button>
+            <button
+                class="glide__arrow glide__arrow--left mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
+                data-glide-dir="<">
+                &#8592;
+            </button>
+            <button
+                class="glide__arrow glide__arrow--right mt-6 flex items-center gap-2 bg-[#fa4223] text-white px-4 py-2 rounded-[10px] border-2 border-[#fa4223] hover:border-[#e0e0e0] hover:bg-[#e0e0e0] hover:text-black transition-colors"
+                data-glide-dir=">">
+                &#8594;
+            </button>
         </div>
     </div>
-
-
     <!-- ====== Products Carousel Section End -->
 
 
