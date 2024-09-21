@@ -363,10 +363,7 @@
             <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
                 <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
                     src="<?= $about['about_image'] ?>" alt="<?= $about['about_title'] ?>">
-                <h3 class="text-2xl font-semibold text-gray-800 mt-4"><?= $about['about_title'] ?></h3>
-                <p class="mt-2 text-gray-600"><?= $about['about_content'] ?></p>
-                <a href="<?= $about['about_button']['url'] ?>"
-                    class="text-indigo-600 hover:underline mt-2 block"><?= $about['about_button']['title'] ?></a>
+
             </div>
             <?php } ?>
             <!-- End of Dynamic Content Section -->
