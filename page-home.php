@@ -412,7 +412,8 @@
     <!-- Projects  -->
     <!-- ====== Products Carousel Section Start -->
     <div class="glide">
-        <!-- Glide Slider Track -->
+        <h2 class="my-4 text-pretty font-extrabold text-4xl text-primary">
+            <?php echo $home_content['projects_section_title'] ?></h2>
         <div class="glide__track" data-glide-el="track">
             <ul class="glide__slides">
                 <?php foreach($home_content['project_repeater'] as $one_project) { ?>
@@ -424,11 +425,11 @@
                                 class="w-full rounded">
                             <!-- Text Overlay Positioned at the Bottom -->
                             <div
-                                class="absolute bottom-0 left-0  right-0 text-center flex items-center w-full bg-black bg-opacity-20 p-4 text-white">
-                                <h2 class="text-lg font-bold">
+                                class="absolute bottom-0 text-center flex flex-col items-center w-full bg-black bg-opacity-20 p-4 text-white">
+                                <h2 class="text-xl font-bold">
                                     <?= $one_project['project_title']; ?>
                                 </h2>
-                                <p class="text-sm">
+                                <p class="text-md font-medium text-primary">
                                     <?= $one_project['project_subtitle']; ?>
                                 </p>
                             </div>
