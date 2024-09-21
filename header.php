@@ -123,11 +123,7 @@
         const body = document.body;
         body.classList.toggle('nav-open');
 
-        if (body.classList.contains('nav-open')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
+
     }
     </script>
 
