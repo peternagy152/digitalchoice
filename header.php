@@ -28,9 +28,10 @@
             class="flex items-center justify-between my-3 px-4 py-2 border border-white rounded-[40px] bg-custom-gradient shadow-lg">
             <!-- Logo and Website Name -->
             <div class="flex items-center space-x-2">
-                <img src="path/to/logo.png" alt="Logo" class="h-8 w-8">
+                <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-8 w-8">
                 <!-- Adjust the path and size of the logo as needed -->
-                <span class="text-black font-semibold text-lg">Digital Choice</span>
+                <span class="text-black text-lg font-bold">Digital</span> <span
+                    class=" text-primary font-bold">Choice</span>
             </div>
 
             <!-- Navigation Links -->
@@ -44,7 +45,7 @@
 
             </div>
             <div>
-                <button class="px-2 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition">
+                <button class="px-2 py-2 bg-primary on hover:bg-gray-500 text-white rounded-lg shadow-md transition">
                     Calendly
                 </button>
             </div>
