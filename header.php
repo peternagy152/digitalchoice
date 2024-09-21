@@ -26,7 +26,7 @@
 
     <nav class="container mx-auto">
         <div
-            class="fixed w-full flex container my-4 items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md rounded-[40px]">
+            class="fixed w-full flex container my-4 z-50 items-center justify-between py-[11px] px-[23px] bg-gradient-to-r from-black to-[#000000fa] shadow-md rounded-[40px]">
             <!-- Logo and Website Name -->
             <div class="flex items-center gap-2">
                 <img src="<?php echo $header_content['logo']; ?>" alt="" class="h-10 w-10">
