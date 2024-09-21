@@ -335,10 +335,10 @@
     <section class="sm:mt-6 lg:mt-8 mt-12 container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div
-            class="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
+            class="my-10  px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-4 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row justify-between">
             <!-- Loop Through Dynamic Content -->
             <?php foreach($home_content['about_repeater'] as $index => $about) { ?>
-            <div class="sm:text-center lg:text-left w-full lg:w-[50%]">
+            <div class="sm:text-center lg:text-left w-full lg:w-[50%] flex flex-col self-center">
                 <h1 class="text-4xl tracking-tight font-extrabold text-gray-800 sm:text-5xl md:text-6xl">
                     <?= $about['about_title'] ?>
                 </h1>
@@ -361,7 +361,7 @@
 
             <!-- Dynamic Image and Content Section -->
             <div class="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
-                <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                <img class="h-56 w-full object-fill sm:h-72 md:h-96 lg:w-full lg:h-full"
                     src="<?= $about['about_image'] ?>" alt="<?= $about['about_title'] ?>">
 
             </div>
