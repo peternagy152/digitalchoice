@@ -10,7 +10,7 @@
  */
 
 ?>
-
+<?php $header_content = get_field("header_group", "options");  ?>
 <footer id="colophon" class="site-footer">
     <div class="bg-black ">
         <div class="container px-6 py-8 mx-auto">
@@ -71,12 +71,11 @@
             </div>
         </div>
     </div>
-</footer><!-- #colophon -->
-</div><!-- #page -->
-<script href="<?php echo get_template_directory_uri() . '/assets/js/main.js'; ?>"></script>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
 
 <?php wp_footer(); ?>
-
 </body>
 
 </html>
