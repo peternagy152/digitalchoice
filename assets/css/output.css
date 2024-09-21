@@ -614,20 +614,12 @@ video {
   height: 2rem;
 }
 
-.h-\[12px\] {
-  height: 12px;
-}
-
 .h-full {
   height: 100%;
 }
 
 .w-8 {
   width: 2rem;
-}
-
-.w-\[12px\] {
-  width: 12px;
 }
 
 .w-full {
