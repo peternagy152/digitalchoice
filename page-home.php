@@ -529,3 +529,4 @@ new Glide('.glide', {
     }
 }).mount();
 </script>
+<?php get_footer() ;  ?>
