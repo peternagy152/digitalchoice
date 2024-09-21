@@ -409,9 +409,9 @@
     <!-- ====== Products Carousel Section Start -->
     <div class="carousel-container relative w-full container mx-auto overflow-hidden">
         <!-- Carousel Items -->
-        <div id="carousel" class="flex transition-transform duration-300">
+        <div id="carousel" class="flex transition-transform duration-300 ease-in-out">
             <?php foreach($home_content['project_repeater'] as $one_project) { ?>
-            <div class="item min-w-1/4 p-4">
+            <div class="item min-w-[25%] p-4">
                 <div class="bg-white rounded-lg shadow p-4">
                     <img src="<?php echo $one_project['project_image']; ?>" alt="Item Image" class="w-full rounded">
                     <h2 class="mt-2 text-lg font-bold">
@@ -477,7 +477,6 @@
     </script>
 
 
-
     <script>
     const carousel = document.getElementById('carousel');
     const nextButton = document.getElementById('next');
@@ -496,6 +495,10 @@
     // Update items after cloning
     items = Array.from(carousel.children);
 
+    // Set unique IDs to clones for loop detection
+    firstClone.setAttribute('data-clone', 'first');
+    lastClone.setAttribute('data-clone', 'last');
+
     // Function to update the carousel position
     function updateCarousel() {
         carousel.style.transition = 'transform 0.3s ease';
@@ -504,11 +507,11 @@
 
     // Reset position when transition ends to create seamless loop
     carousel.addEventListener('transitionend', () => {
-        if (items[currentIndex].id === firstClone.id) {
+        if (items[currentIndex].getAttribute('data-clone') === 'last') {
             carousel.style.transition = 'none';
             currentIndex = 1;
             carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        } else if (items[currentIndex].id === lastClone.id) {
+        } else if (items[currentIndex].getAttribute('data-clone') === 'first') {
             carousel.style.transition = 'none';
             currentIndex = items.length - 2;
             carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
@@ -533,7 +536,6 @@
     // Initial update to start at the first actual item, not the clone
     updateCarousel();
     </script>
-
 
 </body>
 
