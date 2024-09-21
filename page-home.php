@@ -175,6 +175,60 @@
             opacity: 0;
         }
     }
+
+    /* Wave Styles */
+    .waves {
+        position: relative;
+        width: 100%;
+        height: 16vh;
+        margin-bottom: -7px;
+        min-height: 100px;
+        max-height: 150px;
+    }
+
+    .moving-waves>use {
+        animation: move-waves 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .moving-waves>use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 11s;
+    }
+
+    .moving-waves>use:nth-child(2) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .moving-waves>use:nth-child(3) {
+        animation-delay: -3s;
+        animation-duration: 15s;
+    }
+
+    .moving-waves>use:nth-child(4) {
+        animation-delay: -4s;
+        animation-duration: 20s;
+    }
+
+    .moving-waves>use:nth-child(5) {
+        animation-delay: -4s;
+        animation-duration: 25s;
+    }
+
+    .moving-waves>use:nth-child(6) {
+        animation-delay: -3s;
+        animation-duration: 30s;
+    }
+
+    @keyframes move-waves {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-200px);
+        }
+    }
     </style>
 </head>
 
@@ -185,7 +239,8 @@
         <!-- Particles layer -->
         <div id="particles" class="absolute inset-0 z-10"></div>
         <!-- Text content layer -->
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative">
+        <div
+            class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative items-center flex flex-col">
             <h1 class="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223] ">
                 <?php echo $home_content['hero_title']; ?>
             </h1>
@@ -201,7 +256,7 @@
                             fill="currentColor"></path>
                     </svg>
                 </span>
-                <span class="calendly-text"><?php echo $home_content['hero_button']['title'] ; ?></span>
+                <span class="calendly-text"><?php echo $home_content['hero_button']['title']; ?></span>
                 <span class="flex items-center justify-center w-4 h-4">
                     <svg class="w-full h-full" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -214,7 +269,7 @@
     </div>
 
     <!-- Waves SVG positioned below the hero section -->
-    <div class="absolute w-full -bottom-[25vh] z-0">
+    <div class="absolute w-full bottom-0 z-0">
         <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
             <defs>
@@ -222,8 +277,12 @@
                 </path>
             </defs>
             <g class="moving-waves">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#fa422391"></use>
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="#fa422338"></use>
+                <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
+                <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95)"></use>
             </g>
         </svg>
     </div>
@@ -261,31 +320,10 @@
 
     setInterval(createParticle, 50);
     </script>
-
-    <style>
-    /* Particle styles */
-    .particle {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-    }
-
-    /* Particle animation */
-    @keyframes float-up {
-        0% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        100% {
-            transform: translateY(-100vh);
-            opacity: 0;
-        }
-    }
-    </style>
 </body>
 
 </html>
+
 
 
 
