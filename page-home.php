@@ -240,13 +240,13 @@
         <div id="particles" class="absolute inset-0 z-10"></div>
         <!-- Text content layer -->
         <div
-            class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
+            class="mx-auto container px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:pt-32 z-20 relative flex items-center justify-between">
             <!-- Text Content -->
-            <div class="flex flex-col items-center lg:items-start max-w-2xl text-left">
+            <div class="flex flex-col items-center lg:items-start container text-left">
                 <h1 class="max-w-4xl font-display text-5xl font-medium tracking-tight text-[#fa4223]">
                     <?php echo $home_content['hero_title']; ?>
                 </h1>
-                <p class="mt-6 text-lg tracking-tight text-white">
+                <p class="mt-6 text-lg tracking-tight text-white max-w-4xl">
                     <?php echo $home_content['hero_desc']; ?>
                 </p>
                 <a href="<?php echo $home_content['hero_button']['url']; ?>"
@@ -269,9 +269,9 @@
                 </a>
             </div>
             <!-- Image Section -->
-            <div class="flex-shrink-0 ml-8 hidden lg:flex">
+            <div class="flex-shrink-0 mr-8 hidden lg:flex">
                 <img src="<?php echo $home_content['hero_image']; ?>" alt="Hero Image"
-                    class="w-full h-auto max-w-sm object-cover">
+                    class="w-full h-auto max-w-md object-cover">
             </div>
         </div>
 
