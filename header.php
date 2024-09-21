@@ -11,8 +11,8 @@
 <body>
     <?php $header_content = get_field("header_group", "options"); ?>
 
-    <nav class="container">
-        <div class="navbar">
+    <nav class="container navbar_center">
+        <div class="navbar container">
             <!-- Logo and Website Name -->
             <div class="logo-container">
                 <img src="<?php echo $header_content['logo']; ?>" alt="" class="logo">
